@@ -39,10 +39,9 @@ class HomeController extends Controller
 
         //dd($products);
         return Inertia::render('Home', [
-            // 'tiles' => Product::where('category_id', 1)->get(),
             "tiles" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(6),
-            'doors' => Product::where('category_id', 6)->take(6),
-            'bath' => Product::where('category_id', 7)->take(6),
+            "doors" => Product::with(['latestImage', 'translations'])->whereIn("category_id", [5])->paginate(6),
+            "bath" => Product::with(['latestImage', 'translations'])->where("category_id", 7)->paginate(6),
             'partners' => Staff::with('latestImage')->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,

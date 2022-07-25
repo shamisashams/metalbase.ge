@@ -18,25 +18,25 @@ class CategorySeeder extends Seeder
 
         $Category = [
             [
-                "name" => "filebi",
+                "name" => "ფილები",
             ],
             [
-                "name" => "kafeli",
+                "name" => "კაფელი",
             ],
             [
-                "name" => "metlaxi",
+                "name" => "მეტლახი",
             ],
             [
-                "name" => "laminati",
+                "name" => "ლამინატი",
             ],
             [
-                "name" => "rkinis kari",
+                "name" => "რკინის კარი",
             ],
             [
-                "name" => "xis kari",
+                "name" => "ხის კარი",
             ],
             [
-                "name" => "abazanis",
+                "name" => "აბაზანის ავეჯი",
             ],
 
         ];

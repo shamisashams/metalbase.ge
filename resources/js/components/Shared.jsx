@@ -18,7 +18,7 @@ export const ProductBox = (props) => {
                     className=" mx-auto sm:mx-0 h-full object-contain "
                 />
             </div>
-            <Link to={props.link} className="lowercase ">
+            <Link href={props.link} className="lowercase ">
                 {__("client.home_btn", sharedData)} <BiChevronRight className="inline-block" />
             </Link>
         </div>
