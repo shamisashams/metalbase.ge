@@ -80,7 +80,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                                 <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
                                 <div className="text-2xl my-2">{__("client.footer_miles", sharedData)}</div>
                                 <div className="lowercase">
-                                    {__("client.home_btn", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/1.png"
@@ -94,7 +94,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                                 <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
                                 <div className="text-2xl my-2">{__("client.footer_ortesebri", sharedData)}</div>
                                 <div className="lowercase">
-                                    {__("client.home_btn", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/2.png"
@@ -108,7 +108,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                                 <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
                                 <div className="text-2xl my-2">{__("client.footer_metal_paper2", sharedData)}</div>
                                 <div className="lowercase">
-                                    {__("client.home_btn", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/3.png"
@@ -122,7 +122,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                                 <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
                                 <div className="text-2xl my-2">{__("client.footer_granula", sharedData)}</div>
                                 <div className="lowercase">
-                                    {__("client.home_btn", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/4.png"
@@ -139,7 +139,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                                 <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
                                 <div className="text-4xl my-5">{__("client.footer_armatura", sharedData)}</div>
                                 <div className="lowercase">
-                                    {__("client.home_btn", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/5.png"
