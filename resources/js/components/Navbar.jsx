@@ -208,13 +208,15 @@ const Navbar = ({ seo, page }) => {
 
                                 <div className="absolute right-0 top-full w-full pt-2 lg:hidden group-hover:block">
 
-                                    {
+                                    {/* {
                                         Object.keys(locales).map((e, i) => {
                                             return (
                                                 <Link key={i} href={locale_urls[e]}> <img src={langFlags[e]} alt="" /></Link>
                                             )
                                         })
-                                    }
+                                    } */}
+
+                                    {currentLocale == 'ge' ? <Link href={locale_urls['English']}> <img src={langFlags['en']} alt="" /></Link> : <Link href={locale_urls['ქართული']}> <img src={langFlags['ge']} alt="" /></Link>}
                                 </div>
                             </div>
                         </div>
