@@ -15,38 +15,41 @@ class CategorySeeder extends Seeder
     public function run()
     {
         //
-
+        // categorytranslations
         $Category = [
             [
-                "name" => "ფილები",
+                "en" => ["name" => "ფილები"],
+                "ge" => ["name" => "tiles"],
             ],
             [
-                "name" => "კაფელი",
+                "en" => ["name" => "კაფელი"],
+                "ge" => ["name" => "kafeli"],
             ],
             [
-                "name" => "მეტლახი",
+                "en" => ["name" => "მეტლახი"],
+                "ge" => ["name" => "metlaxi"],
             ],
             [
-                "name" => "ლამინატი",
+                "en" => ["name" => "ლამინატი"],
+                "ge" => ["name" => "laminati"],
             ],
             [
-                "name" => "რკინის კარი",
+                "en" => ["name" => "რკინის კარი"],
+                "ge" => ["name" => "iron doors"],
             ],
             [
-                "name" => "ხის კარი",
+                "en" => ["name" => "ხის კარი"],
+                "ge" => ["name" => "Wood doors"],
             ],
             [
-                "name" => "აბაზანის ავეჯი",
+                "en" => ["name" => "აბაზანის ავეჯი"],
+                "ge" => ["name" => "Bathroom"],
             ],
-
         ];
 
         // // Insert Languages
-        // Category::insert($Category);
         foreach ($Category as $cat) {
-            Category::create([
-                "name" => $cat['name']
-            ]);
+            Category::create($cat);
         }
 
         // Category::create([
