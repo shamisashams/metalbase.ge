@@ -356,7 +356,7 @@ class TilesController extends Controller
             // "sameproduct" => Product::with('latestImage')->find($slug),
             "sameproduct" => Product::where([
                 ['id', '!=', $slug],
-                ['category_id', '!=', $product->category_id],
+                ['category_id', '=', $product->category_id],
             ])->with('latestImage')->latest()->limit(6)->get(),
             "seo" => [
                 "title" => $page->meta_title ?? $page->meta_title,
