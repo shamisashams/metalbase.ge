@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+/* @font-face {
+    font-family: "bpg-glaho";
+    src: url("assets/fonts/bpg-glaho-arial-webfont.ttf");
+}
+
+@font-face {
+    font-family: "bpg-caps";
+    src: url("assets/fonts/BPGArialCaps2010.ttf");
+} */
+
+
+
+/* general */
+* {
+    font-family: "bpg-caps";
+}
+
+.wrapper {
+    width: 1640px;
+    margin: auto;
+}
+
+.lowercase {
+    font-family: "bpg-glaho";
+}
+
+/* slider pagination */
+.swiper-pagination {
+    width: 1640px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    text-align: left !important;
+}
+
+.swiper-pagination-bullet {
+    width: 55px !important;
+    height: 4px !important;
+    border-radius: 0 !important;
+    background-color: #fff !important;
+    margin: 0 8px !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important;
+}
+
+.swiper-button-disabled {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* responsive */
+@media screen and (max-width: 1700px) {
+
+    .wrapper,
+    .swiper-pagination {
+        width: 95% !important;
+    }
+}
