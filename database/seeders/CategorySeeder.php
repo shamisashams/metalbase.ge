@@ -18,32 +18,39 @@ class CategorySeeder extends Seeder
         // categorytranslations
         $Category = [
             [
-                "en" => ["name" => "ფილები"],
-                "ge" => ["name" => "tiles"],
+                "slug" => "filebi",
+                "ge" => ["name" => "ფილები"],
+                "en" => ["name" => "tiles"],
             ],
             [
-                "en" => ["name" => "კაფელი"],
-                "ge" => ["name" => "kafeli"],
+                "slug" => "kafeli",
+                "ge" => ["name" => "კაფელი"],
+                "en" => ["name" => "kafeli"],
             ],
             [
-                "en" => ["name" => "მეტლახი"],
-                "ge" => ["name" => "metlaxi"],
+                "slug" => "metlaxi",
+                "ge" => ["name" => "მეტლახი"],
+                "en" => ["name" => "metlaxi"],
             ],
             [
-                "en" => ["name" => "ლამინატი"],
-                "ge" => ["name" => "laminati"],
+                "slug" => "laminati",
+                "ge" => ["name" => "ლამინატი"],
+                "en" => ["name" => "laminati"],
             ],
             [
-                "en" => ["name" => "რკინის კარი"],
-                "ge" => ["name" => "iron doors"],
+                "slug" => "ironDoors",
+                "ge" => ["name" => "რკინის კარი"],
+                "en" => ["name" => "iron doors"],
             ],
             [
-                "en" => ["name" => "ხის კარი"],
-                "ge" => ["name" => "Wood doors"],
+                "slug" => "woodDoors",
+                "ge" => ["name" => "ხის კარი"],
+                "en" => ["name" => "Wood doors"],
             ],
             [
-                "en" => ["name" => "აბაზანის ავეჯი"],
-                "ge" => ["name" => "Bathroom"],
+                "slug" => "bathroom",
+                "ge" => ["name" => "აბაზანის ავეჯი"],
+                "en" => ["name" => "Bathroom"],
             ],
         ];
 
