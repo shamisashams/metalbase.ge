@@ -97,7 +97,7 @@ const SingleProduct = ({ seo, page, product, sameproduct }) => {
                                 className="mr-8 mb-8 w-32 inline-block align-top"
                             >
                                 <div className="w-full h-32 mb-3 overflow-hidden">
-                                    <img className="main_img"
+                                    <img className="w-full h-full object-cover"
                                         src={item.latest_image != null
                                             ? "/" +
                                             item.latest_image.path +

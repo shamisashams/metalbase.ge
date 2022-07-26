@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 /* fonts */
-/* @font-face {
+@font-face {
     font-family: "bpg-glaho";
-    src: url("assets/fonts/bpg-glaho-arial-webfont.ttf");
+    src: url("/assets/fonts/bpg-glaho-arial-webfont.ttf");
 }
 
 @font-face {
     font-family: "bpg-caps";
-    src: url("assets/fonts/BPGArialCaps2010.ttf");
-} */
+    src: url("/assets/fonts/BPGArialCaps2010.ttf");
+}
 
 
 

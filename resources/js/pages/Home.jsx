@@ -62,7 +62,6 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
         })
     }
 
-    console.log(bathroom)
 
     const prevRef = useRef(null);
     const nextRef = useRef(null);

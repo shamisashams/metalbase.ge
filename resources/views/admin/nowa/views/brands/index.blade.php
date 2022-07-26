@@ -11,14 +11,14 @@
 
 
     <!-- breadcrumb -->
-    <div class="breadcrumb-header justify-content-between">
+    {{-- <div class="breadcrumb-header justify-content-between">
         <div class="left-content">
             <span class="main-content-title mg-b-0 mg-b-lg-1">@lang('admin.skills')</span>
         </div>
         <div class="justify-content-center mt-2">
             @include('admin.nowa.views.layouts.components.breadcrump')
         </div>
-    </div>
+    </div> --}}
     <!-- /breadcrumb -->
 
     <!-- row opened -->

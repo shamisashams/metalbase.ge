@@ -85,27 +85,27 @@ const Footer = () => {
         {
             link: route("client.tiles.index"),
             text: __("client.navbar_tiles", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/tiles.svg" />,
+            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/tiles.svg" />,
         },
         {
             link: route("client.tiles2.index"),
             text: __("client.navbar_tiles2", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/tiles2.svg" />,
+            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/tiles2.svg" />,
         },
         {
             link: route("client.tiles3.index"),
             text: __("client.navbar_laminate", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/laminate.svg" />,
+            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/laminate.svg" />,
         },
         {
             link: route("client.doors.index"),
             text: __("client.navbar_doors", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/door.svg" />,
+            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/door.svg" />,
         },
         {
             link: route("client.bathroom.index"),
             text: __("client.navbar_bathroom", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/bathroom.svg" />,
+            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/bathroom.svg" />,
         },
     ];
 
