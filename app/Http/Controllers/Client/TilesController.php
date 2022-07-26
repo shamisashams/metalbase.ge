@@ -47,7 +47,11 @@ class TilesController extends Controller
             'Tiles',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
-                "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
+                // "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
+                "product" => Product::select('products.*', 'categories.slug')
+                    ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.slug', '=', 'filebi')
+                    ->with(['latestImage', 'translations'])->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
                 "seo" => [
@@ -98,8 +102,14 @@ class TilesController extends Controller
         return Inertia::render(
             'Tiles2',
             [
-                "product" => Product::with(['latestImage', 'translations'])->where("category_id", 2)->paginate(10),
-                "product1" => Product::with(['latestImage', 'translations'])->where("category_id", 3)->paginate(10),
+                "product" => Product::select('products.*', 'categories.slug')
+                    ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.slug', '=', 'kafeli')
+                    ->with(['latestImage', 'translations'])->paginate(10),
+                "product1" => Product::select('products.*', 'categories.slug')
+                    ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.slug', '=', 'metlaxi')
+                    ->with(['latestImage', 'translations'])->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
                 "seo" => [
@@ -148,7 +158,10 @@ class TilesController extends Controller
         return Inertia::render(
             'Laminate',
             [
-                "product" => Product::with(['latestImage', 'translations'])->where("category_id", 4)->paginate(10),
+                "product" => Product::select('products.*', 'categories.slug')
+                    ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.slug', '=', 'laminati')
+                    ->with(['latestImage', 'translations'])->paginate(10),
                 // "product1" => Product::with(['latestImage', 'translations'])->where("category_id", 5)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -198,8 +211,14 @@ class TilesController extends Controller
             'Doors',
             [
                 // "staff" => Staff::all(),
-                "product" => Product::with(['latestImage', 'translations'])->where("category_id", 5)->paginate(10),
-                "product1" => Product::with(['latestImage', 'translations'])->where("category_id", 6)->paginate(10),
+                "product" => Product::select('products.*', 'categories.slug')
+                    ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.slug', '=', 'ironDoors')
+                    ->with(['latestImage', 'translations'])->paginate(10),
+                "product1" => Product::select('products.*', 'categories.slug')
+                    ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.slug', '=', 'woodDoors')
+                    ->with(['latestImage', 'translations'])->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
                 "seo" => [
@@ -250,7 +269,10 @@ class TilesController extends Controller
             'Bathroom',
             [
                 // "staff" => Staff::all(),
-                "product" => Product::with(['latestImage', 'translations'])->where("category_id", 7)->paginate(10),
+                "product" => Product::select('products.*', 'categories.slug')
+                    ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.slug', '=', 'bathroom')
+                    ->with(['latestImage', 'translations'])->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
                 "seo" => [
@@ -334,7 +356,7 @@ class TilesController extends Controller
             // "sameproduct" => Product::with('latestImage')->find($slug),
             "sameproduct" => Product::where([
                 ['id', '!=', $slug],
-                ['category_id', '!=', $product->category_id],
+                ['category_id', '=', $product->category_id],
             ])->with('latestImage')->latest()->limit(6)->get(),
             "seo" => [
                 "title" => $page->meta_title ?? $page->meta_title,

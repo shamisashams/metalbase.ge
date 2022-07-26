@@ -175,7 +175,7 @@ const Tiles = ({ seo, page, product, name }) => {
                                             : null} alt="" />
                                     </div>
                                     <Link href={route("client.singleproduct.show", item.id)} className="lowercase ">
-                                        {__("client.product.btn", sharedData)} <BiChevronRight className="inline-block" />
+                                        {__("client.product_btn", sharedData)} <BiChevronRight className="inline-block" />
                                     </Link>
                                 </div>
 

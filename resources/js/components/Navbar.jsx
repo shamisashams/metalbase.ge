@@ -168,7 +168,7 @@ const Navbar = ({ seo, page }) => {
                 </button>
                 <div className="lg:bg-custom-blue-900   lg:text-white  ">
                     <div className="wrapper flex items-center justify-between">
-                        <div className="flex items-center whitespace-nowrap lg:mb-0 mb-5 -ml-6 lg:ml-0">
+                        <div className="flex items-center whitespace-nowrap lg:!mb-0 mb-5 -ml-6 lg:ml-0">
                             <Link href={route("client.home.index")} className="hidden lg:inline-block">
                                 <img src="/assets/images/logo.png" alt="" className="w-80  h-auto py-1" />
                             </Link>
@@ -208,13 +208,15 @@ const Navbar = ({ seo, page }) => {
 
                                 <div className="absolute right-0 top-full w-full pt-2 lg:hidden group-hover:block">
 
-                                    {
+                                    {/* {
                                         Object.keys(locales).map((e, i) => {
                                             return (
                                                 <Link key={i} href={locale_urls[e]}> <img src={langFlags[e]} alt="" /></Link>
                                             )
                                         })
-                                    }
+                                    } */}
+
+                                    {currentLocale == 'ge' ? <Link href={locale_urls['English']}> <img src={langFlags['en']} alt="" /></Link> : <Link href={locale_urls['ქართული']}> <img src={langFlags['ge']} alt="" /></Link>}
                                 </div>
                             </div>
                         </div>

@@ -1591,6 +1591,10 @@ img {
     margin-right: 2.5rem;
   }
 
+  .lg\:\!mb-0 {
+    margin-bottom: 0px !important;
+  }
+
   .lg\:block {
     display: block;
   }

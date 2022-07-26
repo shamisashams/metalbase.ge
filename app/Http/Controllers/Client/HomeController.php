@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use App\Repositories\Eloquent\ProductRepository;
-
+use Clockwork\Request\Request;
+use Dotenv\Util\Regex;
+use Illuminate\Support\Facades\Redis;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
 
 
@@ -38,11 +40,24 @@ class HomeController extends Controller
 
 
         //dd($products);
+        $query =  Product::select('products.*', 'categories.slug')
+            ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+            ->where('categories.slug', '=', 'filebi')
+            ->with(['latestImage', 'translations'])->paginate(6);
+
         return Inertia::render('Home', [
-            // 'tiles' => Product::where('category_id', 1)->get(),
-            "tiles" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(6),
-            'doors' => Product::where('category_id', 6)->take(6),
-            'bath' => Product::where('category_id', 7)->take(6),
+            // "tiles" => Product::with(['latestImage', 'translations'])->where("category_id", 15)->paginate(6),
+            "tiles" => $query,
+            // "tiles" => $query,
+            "doors" => Product::select('products.*', 'categories.slug')
+                ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                ->where('categories.slug', '=', 'ironDoors')
+                ->with(['latestImage', 'translations'])->paginate(6),
+
+            "bath" => Product::select('products.*', 'categories.slug')
+                ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                ->where('categories.slug', '=', 'bathroom')
+                ->with(['latestImage', 'translations'])->paginate(6),
             'partners' => Staff::with('latestImage')->get(),
             "sliders" => $sliders->get(), "page" => $page, "seo" => [
                 "title" => $page->meta_title,

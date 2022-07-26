@@ -74,7 +74,7 @@ class Category extends Model
      */
     protected $fillable = [
         // 'category_id',
-        // 'slug',
+        'slug',
         // 'position',
         // 'status',
         // 'parent_id'
