@@ -89,7 +89,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                                 />
                             </div>
                         </Link>
-                        <Link href="/">
+                        <Link href={route("client.ortisebri.index")}>
                             <div className="p-6 h-72  relative bg-zinc-100 overflow-hidden">
                                 <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
                                 <div className="text-2xl my-2">{__("client.footer_ortesebri", sharedData)}</div>
