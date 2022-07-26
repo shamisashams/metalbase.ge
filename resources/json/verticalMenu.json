@@ -80,6 +80,13 @@
             "i18n": "page",
             "icon": "language",
             "slug": "page"
+        },
+        {
+            "url": "iron.index",
+            "name": "Irons",
+            "i18n": "page",
+            "icon": "language",
+            "slug": "page"
         }
     ],
     "_comment": [

@@ -44,7 +44,7 @@ class IronSeeder extends Seeder
             ],
             [
                 "slug" => "ortisebri",
-                "ge" => ["name" => "ortisebri"],
+                "ge" => ["name" => "ორტისებრი"],
                 "en" => ["name" => "ortisebri"],
             ],
             [

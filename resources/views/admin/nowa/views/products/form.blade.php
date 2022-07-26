@@ -102,9 +102,7 @@
                                                 <label class="form-label">@lang('admin.brand')</label>
                                                     <select class="form-control" name="brand" id='brand'>
                                                         @foreach ($brand as $cat)
-
                                                         <option value={{$cat->translate($locale)->brand}}>{{$cat->name}}</option>
-
                                                         @endforeach
                                                     </select>
                                             </div>
