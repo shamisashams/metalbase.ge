@@ -36,6 +36,8 @@ use ReflectionException;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Size;
 use App\Models\Iron;
+// use Clockwork\Request\Request;
+use Illuminate\Http\Request;
 
 class IronController extends Controller
 {
@@ -68,5 +70,10 @@ class IronController extends Controller
             "sizes" => Iron::with('translations')->get(),
             "locale" => Config::get('app.locale'),
         ]);
+    }
+
+    public function create(Request $request)
+    {
+        dd($request->post());
     }
 }

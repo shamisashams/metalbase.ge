@@ -24,7 +24,7 @@ use App\Http\Controllers\Client\AboutUsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Client\ServiceController;
-use App\Http\Controllers\Client\IronController;
+use App\Http\Controllers\Admin\IronController;
 use App\Http\Controllers\Client\DocumentationController;
 use App\Http\Controllers\Client\OurTeamController;
 use App\Http\Controllers\Client\LoginPageController;
@@ -70,6 +70,7 @@ Route::prefix('{locale?}')
 
                 //iron sizes
                 Route::resource('iron', \App\Http\Controllers\Admin\IronController::class);
+                Route::post('create_iron', [IronController::class, 'create'])->name("admin.irons.create");
 
                 // Product
                 Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
