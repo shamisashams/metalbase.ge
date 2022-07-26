@@ -41,13 +41,8 @@ use Illuminate\Http\Request;
 
 class IronController extends Controller
 {
-    /**
-     * @var ProductRepositoryInterface
-     */
+
     private $staffRepository;
-
-
-
 
     public function __construct(
         StaffRepository $staffRepository
@@ -55,25 +50,37 @@ class IronController extends Controller
         $this->staffRepository = $staffRepository;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|View
-     */
     public function index(ProductRequest $request)
     {
-        /*return view('admin.pages.product.index', [
-            'products' => $this->productRepository->getData($request, ['translations', 'categories'])
-        ]);*/
 
         return view('admin.nowa.views.irons.index', [
             "sizes" => Iron::with('translations')->get(),
+            "data" => Size::with(['getdata'])->paginate(5),
             "locale" => Config::get('app.locale'),
         ]);
     }
 
     public function create(Request $request)
     {
-        dd($request->post());
+        // dd($request->post());
+        Size::create([
+            "iron_id" => $request->product,
+            "size" => $request->size,
+        ]);
+        return redirect()->back();
+    }
+
+    public function destroy(Request $request, $locale, $slug)
+    {
+        // dd($slug);
+        Size::where('id', $slug)->delete();
+        return redirect()->back();
+    }
+
+    public function update(Request $request)
+    {
+        // dd($request->post());
+        Size::where("iron_id", $request->id)->update(["size" => $request->size]);
+        return redirect()->back();
     }
 }

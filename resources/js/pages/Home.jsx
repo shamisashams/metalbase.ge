@@ -151,7 +151,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                     </div>
                 </section>
                 <section className="wrapper py-10">
-                    <Link href="/partners" className="text-lg hover:underline">
+                    <Link href={route("client.partners.index")} className="text-lg hover:underline">
                         {/* <PartnerIcon className="inline-block align-middle mr-2" /> */}
                         <img className="inline-block align-middle mr-2" src="/assets/images/icons/svg/partners.svg" />
                         {__("client.navbar_partners", sharedData)}

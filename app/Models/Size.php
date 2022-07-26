@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Translations\IronTranslation;
 use App\Traits\ScopeFilter;
-use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -16,7 +15,7 @@ use Kalnoy\Nestedset\NodeTrait;
 
 class Size extends Model
 {
-    use Translatable, HasFactory, ScopeFilter;
+    use  HasFactory, ScopeFilter;
 
     protected $table = 'sizes';
 
@@ -25,11 +24,7 @@ class Size extends Model
         'size'
     ];
 
-    // protected $translationModel = IronTranslation::class;
 
-    // public $translatedAttributes = [
-    //     'name'
-    // ];
 
     public function getFilterScopes(): array
     {
@@ -51,7 +46,12 @@ class Size extends Model
 
     public function irons(): hasMany
     {
-        return $this->hasMany(Iron::class);
+        return $this->hasMany(Iron::class, 'iron_id');
+    }
+
+    public function getdata()
+    {
+        return $this->hasMany('App\Models\Iron', 'id')->with('translations');
     }
 
 

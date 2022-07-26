@@ -71,6 +71,8 @@ Route::prefix('{locale?}')
                 //iron sizes
                 Route::resource('iron', \App\Http\Controllers\Admin\IronController::class);
                 Route::post('create_iron', [IronController::class, 'create'])->name("admin.irons.create");
+                Route::get('destroy/{id}', [IronController::class, 'destroy'])->name("admin.irons.del");
+                Route::post('update', [IronController::class, 'update'])->name("admin.irons.update");
 
                 // Product
                 Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
