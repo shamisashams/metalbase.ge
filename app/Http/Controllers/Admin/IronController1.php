@@ -52,10 +52,10 @@ class IronController1 extends Controller
 
     public function index(ProductRequest $request)
     {
-
+        //saxelebis gamo aketebs savaraudod modelshi size aris dagav
         return view('admin.nowa.views.irons.index', [
-            "sizes" => Iron::with('translations')->get(),
-            "data" => Size::with(['iron'])->paginate(5),
+            "zoma" => Iron::with('translations')->get(),
+            "sizes" => Size::paginate(5),
             "locale" => Config::get('app.locale'),
         ]);
     }

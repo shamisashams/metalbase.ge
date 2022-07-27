@@ -88,13 +88,6 @@ class IronController extends Controller
         }
 
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
-        //        dd($page->file);
-        //        dd(App::getLocale());
-        // $products = app(ProductRepository::class)->getPopularProducts();
-
-
-
-        //dd($products);
 
         return Inertia::render(
             'Iron/2',

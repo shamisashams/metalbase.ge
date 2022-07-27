@@ -43,16 +43,16 @@ const Iron1 = ({ seo, page, sizes }) => {
                         <BiChevronRight className="inline-block mx-1" />
                         <p className="opacity-50  inline-block lowercase">რკინეული</p>
                         <BiChevronRight className="inline-block mx-1" />
-                        <p className="inline-block lowercase">პროფილი - მილკვადრატი</p>
+                        <p className="inline-block lowercase">პროფილი - მილი</p>
                     </div>
-                    <div className="text-3xl my-10">პროფილი - მილკვადრატი</div>
+                    <div className="text-3xl my-10">პროფილი - მილი</div>
                 </div>
                 <div
                     className="py-10 mb-20 bg-cover bg-no-repeat bg-center relative overflow-hidden"
                     style={{ backgroundImage: `url('/assets/images/iron/bg.png')` }}
                 >
                     <img
-                        src="/assets/images/iron/1.png"
+                        src="/assets/images/iron/2.png"
                         className="absolute bottom-0 right-0 xl:w-auto w-1/2"
                         alt=""
                     />

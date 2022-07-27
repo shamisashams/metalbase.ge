@@ -155,8 +155,8 @@ Route::prefix('{locale?}')
             Route::get('metalprofiles', [IronController::class, 'index'])->name('client.metalprofiles.index')->withoutMiddleware('active');
             Route::get('metalmiles', [IronController::class, 'mile'])->name('client.mile.index')->withoutMiddleware('active');
             Route::get('metalpaper', [IronController::class, 'metalpaper'])->name('client.metalpaper.index')->withoutMiddleware('active');
-            Route::get('metalpaper1', [IronController::class, 'metalpaper'])->name('client.metalpaper.index1')->withoutMiddleware('active');
-            Route::get('metalpaper2', [IronController::class, 'metalpaper'])->name('client.metalpaper.index2')->withoutMiddleware('active');
+            Route::get('metalpaper1', [IronController::class, 'metalpaper1'])->name('client.metalpaper.index1')->withoutMiddleware('active');
+            Route::get('metalpaper2', [IronController::class, 'metalpaper2'])->name('client.metalpaper.index2')->withoutMiddleware('active');
             Route::get('ortisebri', [IronController::class, 'ortisebri'])->name('client.ortisebri.index')->withoutMiddleware('active');
             Route::get('shveleri', [IronController::class, 'shveleri'])->name('client.shveleri.index')->withoutMiddleware('active');
             Route::get('kutxovana', [IronController::class, 'kutxovana'])->name('client.kutxovana.index')->withoutMiddleware('active');

@@ -197,9 +197,8 @@ const Navbar = ({ seo, page }) => {
                 <RiMenuAddFill className="w-6 h-6" />
             </button>
             <div
-                className={`fixed left-0 top-0 w-full h-screen flex flex-col justify-center items-center  lg:relative lg:h-auto bg-white lg:block transition duration-500 lg:!translate-y-0 lg:!opacity-100 ${
-                    showMenu ? "translate-y-0" : "-translate-y-full"
-                }  `}
+                className={`fixed left-0 top-0 w-full h-screen flex flex-col justify-center items-center  lg:relative lg:h-auto bg-white lg:block transition duration-500 lg:!translate-y-0 lg:!opacity-100 ${showMenu ? "translate-y-0" : "-translate-y-full"
+                    }  `}
             >
                 <button
                     className="absolute top-14 right-3 lg:hidden"

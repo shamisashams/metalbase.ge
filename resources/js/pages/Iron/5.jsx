@@ -12,7 +12,7 @@ import { FaPhone } from "react-icons/fa";
 import { Link } from '@inertiajs/inertia-react';
 import Layout from "../../Layouts/Layout";
 
-const Iron1 = () => {
+const Iron1 = ({ seo, sizes }) => {
     const otherIrons = [
         {
             img: "/assets/images/iron/2.png",
@@ -41,79 +41,81 @@ const Iron1 = () => {
         },
     ];
     return (
-        <div>
-            <div className="wrapper">
-                <div className="block pt-6">
-                    <p className="opacity-50 inline-block  lowercase">მთავარი</p>
-                    <BiChevronRight className="inline-block mx-1" />
-                    <p className="opacity-50  inline-block lowercase">რკინეული</p>
-                    <BiChevronRight className="inline-block mx-1" />
-                    <p className="inline-block lowercase">ლითონის ფურცელი დახვრეტილი</p>
-                </div>
-                <div className="text-3xl my-10">ლითონის ფურცელი დახვრეტილი</div>
-            </div>
-            <div
-                className="py-10 mb-20 bg-cover bg-no-repeat bg-center relative overflow-hidden"
-                style={{ backgroundImage: `url('/assets/images/iron/bg.png')` }}
-            >
-                <img
-                    src="/assets/images/iron/1.png"
-                    className="absolute bottom-0 right-0 xl:w-auto w-1/2"
-                    alt=""
-                />
+        <Layout seo={seo}>
+            <div>
                 <div className="wrapper">
-                    <div className="max-w-lg lowercase text-justify relative z-20">
-                        პროდუქტის აღწერა, რა არის, რისთვის გამოიყენება, როგორ მზადდება. ამ
-                        კონკრეტულ შემთხვევაში როგორი ხარისხისაა, საიდან არის შემოტანილი ან
-                        სადაა წარმოებული და ა.შ.
+                    <div className="block pt-6">
+                        <p className="opacity-50 inline-block  lowercase">მთავარი</p>
+                        <BiChevronRight className="inline-block mx-1" />
+                        <p className="opacity-50  inline-block lowercase">რკინეული</p>
+                        <BiChevronRight className="inline-block mx-1" />
+                        <p className="inline-block lowercase">ლითონის ფურცელი დახვრეტილი</p>
                     </div>
-                    <select
-                        name=""
-                        id=""
-                        className="my-10 h-12 px-4 text- border border-custom-blue-900 outline-0"
-                    >
-                        <option className="py-2 text-sm lowercase" value="">
-                            შეარჩიე ზომა
-                        </option>
-                        <option className="py-2 text-sm lowercase" value="">
-                            ეაეშ ზრჩიომა
-                        </option>
-                        <option className="py-2 text-sm lowercase" value="">
-                            რჩიე ზომა
-                        </option>
-                        <option className="py-2 text-sm lowercase" value="">
-                            ჩიე ზოშეარმაშეა
-                        </option>
-                    </select>
-                    <div>შესაკვეთად დაგვიკავშირდით</div>
-                    <a href={`tel:${contactInfo.tel}`}>
-                        <FaPhone className="inline-block mr-2" />
-                        {contactInfo.tel}
-                    </a>
-                    <div className="mt-12 mb-4">მსგავსი პროდუქტი</div>
-                    <div className="block">
-                        {otherIrons.map((item, index) => {
-                            return (
-                                <Link
-                                    to={item.link}
-                                    key={index}
-                                    className="inline-block mr-8 mb-8 relative z-20"
-                                >
-                                    <div className="w-24 h-24 bg-white mb-3">
-                                        <img
-                                            src={item.img}
-                                            alt=""
-                                            className="object-cover w-full h-full"
-                                        />
-                                    </div>
-                                    <div className="lowercase">{item.name}</div>
-                                </Link>
-                            );
-                        })}
+                    <div className="text-3xl my-10">ლითონის ფურცელი დახვრეტილი</div>
+                </div>
+                <div
+                    className="py-10 mb-20 bg-cover bg-no-repeat bg-center relative overflow-hidden"
+                    style={{ backgroundImage: `url('/assets/images/iron/bg.png')` }}
+                >
+                    <img
+                        className="absolute bottom-0 right-0 xl:w-auto w-1/2"
+                        src="/assets/images/iron/5.png"
+                        alt=""
+                    />
+                    <div className="wrapper">
+                        <div className="max-w-lg lowercase text-justify relative z-20">
+                            პროდუქტის აღწერა, რა არის, რისთვის გამოიყენება, როგორ მზადდება. ამ
+                            კონკრეტულ შემთხვევაში როგორი ხარისხისაა, საიდან არის შემოტანილი ან
+                            სადაა წარმოებული და ა.შ.
+                        </div>
+                        <select
+                            name=""
+                            id=""
+                            className="my-10 h-12 px-4 text- border border-custom-blue-900 outline-0"
+                        >
+                            <option className="py-2 text-sm lowercase" value="">
+                                შეარჩიე ზომა
+                            </option>
+                            {
+                                sizes.data.map((e) => {
+                                    return (
+                                        <option className="py-2 text-sm lowercase" value="">
+                                            {e.size}
+                                        </option>
+                                    )
+                                })
+                            }
+                        </select>
+                        <div>შესაკვეთად დაგვიკავშირდით</div>
+                        <a href={`tel:${contactInfo.tel}`}>
+                            <FaPhone className="inline-block mr-2" />
+                            {contactInfo.tel}
+                        </a>
+                        <div className="mt-12 mb-4">მსგავსი პროდუქტი</div>
+                        <div className="block">
+                            {otherIrons.map((item, index) => {
+                                return (
+                                    <Link
+                                        to={item.link}
+                                        key={index}
+                                        className="inline-block mr-8 mb-8 relative z-20"
+                                    >
+                                        <div className="w-24 h-24 bg-white mb-3">
+                                            <img
+                                                src={item.img}
+                                                alt=""
+                                                className="object-cover w-full h-full"
+                                            />
+                                        </div>
+                                        <div className="lowercase">{item.name}</div>
+                                    </Link>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </Layout>
     );
 };
 

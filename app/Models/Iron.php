@@ -64,10 +64,12 @@ class Iron extends Model
     }
 
 
-    public function size(): BelongsTo
+    public function sizes()
     {
-        return  $this->belongsto(Size::class);
+        return  $this->hasMany(Size::class);
     }
+
+
     /**
      * @return MorphMany
      */

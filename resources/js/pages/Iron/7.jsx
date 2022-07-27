@@ -58,7 +58,7 @@ const Iron1 = ({ seo, page, sizes }) => {
                     style={{ backgroundImage: `url('/assets/images/iron/bg.png')` }}
                 >
                     <img
-                        src="/assets/images/iron/1.png"
+                        src="/assets/images/iron/7.png"
                         className="absolute bottom-0 right-0 xl:w-auto w-1/2"
                         alt=""
                     />

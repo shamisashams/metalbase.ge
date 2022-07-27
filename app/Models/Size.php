@@ -44,15 +44,20 @@ class Size extends Model
         ];
     }
 
-    public function irons(): hasMany
-    {
-        return $this->hasMany(Iron::class, 'iron_id');
-    }
+    // public function irons(): hasMany
+    // {
+    //     return $this->hasMany(Iron::class, 'iron_id');
+    // }
 
     public function iron()
     {
-        return $this->hasMany('App\Models\Iron', 'id')->with('translation');
+        return $this->belongsTo(iron::class)->with('translation');
     }
+
+    // public function slug()
+    // {
+    //     return $this->hasMany('App\Models\Iron', 'id')->with('translation');
+    // }
 
 
     /**

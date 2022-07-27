@@ -18,62 +18,62 @@ class IronSeeder extends Seeder
 
         $irons = [
             [
-                "slug" => "profili_milkvadrati",
+                "slug" => "პროფილი მილკვადრატი",
                 "ge" => ["name" => "პროფილი მილკვადრატი"],
                 "en" => ["name" => "profili milkvadrati"],
             ],
             [
-                "slug" => "mili",
+                "slug" => "მილი",
                 "ge" => ["name" => "მილი"],
                 "en" => ["name" => "mili"],
             ],
             [
-                "slug" => "litonis_furceli",
+                "slug" => "ლითონის ფურცელი",
                 "ge" => ["name" => "ლითონის ფურცელი"],
                 "en" => ["name" => "litonis furceli"],
             ],
             [
-                "slug" => "litonis_furceli_dajatuli",
+                "slug" => "ლითონის ფურცელი დაჟატული",
                 "ge" => ["name" => "ლითონის ფურცელი დაჟატული"],
                 "en" => ["name" => "litonis furceli dajatuli"],
             ],
             [
-                "slug" => "litonis_furceli_daxvretili",
+                "slug" => "ლითონის ფურცელი დახვრეტილი",
                 "ge" => ["name" => "ლითონის ფურცელი დახვრეტილი"],
                 "en" => ["name" => "litonis furceli daxvretili"],
             ],
             [
-                "slug" => "ortisebri",
+                "slug" => "ორტისებრი",
                 "ge" => ["name" => "ორტისებრი"],
                 "en" => ["name" => "ortisebri"],
             ],
             [
-                "slug" => "shveleri",
+                "slug" => "შველერი",
                 "ge" => ["name" => "შველერი"],
                 "en" => ["name" => "shveleri"],
             ],
             [
-                "slug" => "kutxovana",
+                "slug" => "კუთხოვანა",
                 "ge" => ["name" => "კუთხოვანა"],
                 "en" => ["name" => "kutxovana"],
             ],
             [
-                "slug" => "zolovana",
+                "slug" => "ზოლოვანა",
                 "ge" => ["name" => "ზოლოვანა"],
                 "en" => ["name" => "shveleri"],
             ],
             [
-                "slug" => "kvadrati",
+                "slug" => "კვადრატი",
                 "ge" => ["name" => "კვადრატი"],
                 "en" => ["name" => "kvadrati"],
             ],
             [
-                "slug" => "granula",
+                "slug" => "გრანულა",
                 "ge" => ["name" => "გრანულა"],
                 "en" => ["name" => "granula"],
             ],
             [
-                "slug" => "armatura",
+                "slug" => "არმატურა",
                 "ge" => ["name" => "არმატურა"],
                 "en" => ["name" => "armatura"],
             ],

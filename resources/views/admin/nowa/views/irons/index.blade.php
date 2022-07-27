@@ -9,7 +9,6 @@
 @section('content')
 
 
-{{-- @dd($data) --}}
 <div class="container-fluid bg-white ">
     {{-- <h5 class='mb-2 pt-2'>admin.irons</h5> --}}
     <div class="card-header pb-0">
@@ -27,7 +26,7 @@
           <label for="exampleInputEmail1" class="form-label">Choose Product</label>
           <select class="form-control" name="product" id='size' required>
             <option disabled selected>choose product</option>
-            @foreach ($sizes as $cat)
+            @foreach ($zoma as $cat)
             <option value={{$cat->id}}>{{$cat->translate($locale)->name}}</option>
 
             @endforeach
@@ -52,17 +51,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($data as $v)
+        @foreach ($sizes as $v)
 
-        {{-- @php
-        print_r($v->getdata)
-        @endphp --}}
-
-
+  {{-- @dd($v->iron) --}}
         <tr>
-            {{-- @dd($v->iron) --}}
             <td>{{$v->id}}</td>
-            <td>{{$v->iron[0]->name}}</td>
+            <td>{{$v->iron->name}}</td>
             <form action={{route('admin.irons.update')}} method="post">
                 @csrf
             <td>
@@ -89,7 +83,7 @@
 </table>
 <div class="contaner">
 
-    {{ $data->appends(request()->input())->links('admin.vendor.pagination.material') }}
+    {{ $sizes->appends(request()->input())->links('admin.vendor.pagination.material') }}
 </div>
 
 @endsection
