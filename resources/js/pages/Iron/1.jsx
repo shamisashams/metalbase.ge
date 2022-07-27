@@ -14,7 +14,6 @@ import Layout from "../../Layouts/Layout";
 
 const Iron1 = ({ seo, page, gphone, gemail, gaddress, sizes }) => {
 
-    console.log(sizes, 'esaa');
 
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;

@@ -13,7 +13,7 @@ import { Link } from '@inertiajs/inertia-react';
 import Layout from "../../Layouts/Layout";
 
 
-const Iron1 = ({ seo, page }) => {
+const Iron1 = ({ seo, page, sizes }) => {
     const otherIrons = [
         {
             img: "/assets/images/iron/2.png",
@@ -77,15 +77,15 @@ const Iron1 = ({ seo, page }) => {
                             <option className="py-2 text-sm lowercase" value="">
                                 შეარჩიე ზომა
                             </option>
-                            <option className="py-2 text-sm lowercase" value="">
-                                ეაეშ ზრჩიომა
-                            </option>
-                            <option className="py-2 text-sm lowercase" value="">
-                                რჩიე ზომა
-                            </option>
-                            <option className="py-2 text-sm lowercase" value="">
-                                ჩიე ზოშეარმაშეა
-                            </option>
+                            {
+                                sizes.data.map((e) => {
+                                    return (
+                                        <option className="py-2 text-sm lowercase" value="">
+                                            {e.size}
+                                        </option>
+                                    )
+                                })
+                            }
                         </select>
                         <div>შესაკვეთად დაგვიკავშირდით</div>
                         <a href={`tel:${contactInfo.tel}`}>
