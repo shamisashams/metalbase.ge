@@ -13,7 +13,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Inertia\Inertia;
 use App\Repositories\Eloquent\ProductRepository;
 use App\Models\Product;
-
+use App\Models\Size;
+use App\Models\Iron;
 
 class IronController extends Controller
 {
@@ -44,6 +45,7 @@ class IronController extends Controller
             'Iron/1',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '1')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -96,6 +98,7 @@ class IronController extends Controller
             'Iron/2',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '2')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -145,6 +148,7 @@ class IronController extends Controller
             'Iron/4',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '4')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -194,6 +198,7 @@ class IronController extends Controller
             'Iron/3',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '3')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -243,6 +248,7 @@ class IronController extends Controller
             'Iron/5',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '5')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -292,6 +298,7 @@ class IronController extends Controller
             'Iron/6',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '6')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -335,6 +342,7 @@ class IronController extends Controller
             'Iron/7',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '7')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -377,6 +385,7 @@ class IronController extends Controller
             'Iron/8',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '8')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -419,6 +428,7 @@ class IronController extends Controller
             'Iron/9',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '9')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -461,6 +471,7 @@ class IronController extends Controller
             'Iron/10',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '10')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -503,6 +514,7 @@ class IronController extends Controller
             'Iron/11',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '11')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,
@@ -545,6 +557,7 @@ class IronController extends Controller
             'Iron/12',
             [
                 // "product" => Product::with('latestImage')->where('category_id', ('7'))->paginate(10),
+                "sizes" => Size::where('iron_id', '12')->with(['iron'])->paginate(5),
                 "product" => Product::with(['latestImage', 'translations'])->where("category_id", 1)->paginate(10),
                 "sliders" => $sliders->get(),
                 "page" => $page,

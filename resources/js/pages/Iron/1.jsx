@@ -12,7 +12,9 @@ import { FaPhone } from "react-icons/fa";
 import { Link, usePage } from '@inertiajs/inertia-react';
 import Layout from "../../Layouts/Layout";
 
-const Iron1 = ({ seo, page, gphone, gemail, gaddress }) => {
+const Iron1 = ({ seo, page, gphone, gemail, gaddress, sizes }) => {
+
+    console.log(sizes, 'esaa');
 
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
@@ -78,15 +80,16 @@ const Iron1 = ({ seo, page, gphone, gemail, gaddress }) => {
                             <option className="py-2 text-sm lowercase" value="">
                                 {__("client.irons_choose_size", sharedData)}
                             </option>
-                            <option className="py-2 text-sm lowercase" value="">
-                                ეაეშ ზრჩიომა
-                            </option>
-                            <option className="py-2 text-sm lowercase" value="">
-                                რჩიე ზომა
-                            </option>
-                            <option className="py-2 text-sm lowercase" value="">
-                                ჩიე ზოშეარმაშეა
-                            </option>
+
+                            {
+                                sizes.data.map((e) => {
+                                    return (
+                                        <option className="py-2 text-sm lowercase" value="">
+                                            {e.size}
+                                        </option>
+                                    )
+                                })
+                            }
                         </select>
                         <div>{__("client.irons_contact_us", sharedData)}</div>
                         <a href={`tel:${contactInfo.tel}`}>
