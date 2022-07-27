@@ -51,7 +51,7 @@ class Size extends Model
 
     public function iron()
     {
-        return $this->belongsTo(iron::class)->with('translation');
+        return $this->belongsTo(Iron::class)->with('translation');
     }
 
     // public function slug()
