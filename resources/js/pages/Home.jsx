@@ -30,7 +30,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                 {
                     name: e.title,
                     size: `${e.height} X ${e.width}`,
-                    img: `${e.latest_image.path}/${e.latest_image.title}`,
+                    img: e.latest_image ? `${e.latest_image.path}/${e.latest_image.title}` : '/',
                     link: route("client.singleproduct.show", e.id),
                 },
             )
@@ -44,7 +44,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                 {
                     name: e.title,
                     size: `${e.height} X ${e.width}`,
-                    img: `${e.latest_image.path}/${e.latest_image.title}`,
+                    img: e.latest_image ? `${e.latest_image.path}/${e.latest_image.title}` : '/',,
                     link: route("client.singleproduct.show", e.id),
                 },
             )
@@ -56,7 +56,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                 {
                     name: e.title,
                     size: `${e.height} X ${e.width}`,
-                    img: `${e.latest_image.path}/${e.latest_image.title}`,
+                    img: e.latest_image ? `${e.latest_image.path}/${e.latest_image.title}` : '/',,
                     link: route("client.singleproduct.show", e.id),
                 },
             )
