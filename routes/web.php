@@ -24,7 +24,8 @@ use App\Http\Controllers\Client\AboutUsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Client\ServiceController;
-use App\Http\Controllers\Admin\IronController;
+use App\Http\Controllers\Admin\IronController1;
+use App\Http\Controllers\client\IronController;
 use App\Http\Controllers\Client\DocumentationController;
 use App\Http\Controllers\Client\OurTeamController;
 use App\Http\Controllers\Client\LoginPageController;
@@ -69,10 +70,10 @@ Route::prefix('{locale?}')
                 Route::get('staff/{staff}/destroy', [\App\Http\Controllers\Admin\StaffController::class, 'destroy'])->name('staff.destroy');
 
                 //iron sizes
-                Route::resource('iron', \App\Http\Controllers\Admin\IronController::class);
-                Route::post('create_iron', [IronController::class, 'create'])->name("admin.irons.create");
-                Route::get('destroy/{id}', [IronController::class, 'destroy'])->name("admin.irons.del");
-                Route::post('update', [IronController::class, 'update'])->name("admin.irons.update");
+                Route::resource('iron', \App\Http\Controllers\Admin\IronController1::class);
+                Route::post('create_iron', [IronController1::class, 'create'])->name("admin.irons.create");
+                Route::get('destroy/{id}', [IronController1::class, 'destroy'])->name("admin.irons.del");
+                Route::post('update', [IronController1::class, 'update'])->name("admin.irons.update");
 
                 // Product
                 Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);

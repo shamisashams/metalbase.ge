@@ -10,9 +10,18 @@
 
 
 {{-- @dd($data) --}}
-<div class="container-fluid mt-4 bg-white">
-    <h5 class='mb-2 pt-2'>admin.irons</h5>
-    <form class='w-25' action={{route("admin.irons.create")}} method="post" >
+<div class="container-fluid bg-white ">
+    {{-- <h5 class='mb-2 pt-2'>admin.irons</h5> --}}
+    <div class="card-header pb-0">
+        <div class="d-flex justify-content-between">
+            <h4 class="card-title mg-b-0">@lang('admin.irons')</h4>
+        </div>
+        {{-- <a href="{{locale_route('product.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.createbutt')</a> --}}
+        <button type="submit" id='costumbtn' class="btn ripple btn-primary">admin.create</button>
+
+        {{--<p class="tx-12 tx-gray-500 mb-2">Example of Nowa Simple Table. <a href="">Learn more</a></p>--}}
+    </div>
+    <form style='display: none' id='popup' class='w-25' action={{route("admin.irons.create")}} method="post">
         @csrf
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Choose Product</label>
@@ -30,7 +39,6 @@
         <button type="submit" class="btn ripple btn-primary">create</button>
       </form>
  </div>
-
 
  <table class="table mg-b-0 text-md-nowrap mt-3 mb-2">
     <thead>
@@ -80,6 +88,16 @@
 @endsection
 
 @section('scripts')
+<script>
+    let btn = document.getElementById('costumbtn'), box = document.getElementById('popup'),clicked=false;
+    btn.addEventListener('click', ()=>{
+        clicked = !clicked;
+        if(clicked){
+            box.style.display = 'block';
+            btn.style.display = 'none';
+        }
+    })
+</script>
 
 
 

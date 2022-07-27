@@ -39,7 +39,7 @@ use App\Models\Iron;
 // use Clockwork\Request\Request;
 use Illuminate\Http\Request;
 
-class IronController extends Controller
+class IronController1 extends Controller
 {
 
     private $staffRepository;
