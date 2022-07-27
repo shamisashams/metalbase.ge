@@ -23,6 +23,7 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
 
     const tileSlider = [], doorsHome = [], bathroom = [];
 
+    // { e.latest_image ? `${e.latest_image.path}/${e.latest_image.title}` : "" }
     if (tiles.data) {
         tiles.data.map((e, i) => {
             tileSlider.push(
