@@ -53,9 +53,16 @@
     </thead>
     <tbody>
         @foreach ($data as $v)
+
+        {{-- @php
+        print_r($v->getdata)
+        @endphp --}}
+
+
         <tr>
-            <th>{{$v->id}}</th>
-            <th>{{$v->iron_id}}</th>
+            {{-- @dd($v->iron) --}}
+            <td>{{$v->id}}</td>
+            <td>{{$v->iron[0]->name}}</td>
             <form action={{route('admin.irons.update')}} method="post">
                 @csrf
             <td>

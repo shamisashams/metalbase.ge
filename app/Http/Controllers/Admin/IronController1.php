@@ -55,7 +55,7 @@ class IronController1 extends Controller
 
         return view('admin.nowa.views.irons.index', [
             "sizes" => Iron::with('translations')->get(),
-            "data" => Size::with(['getdata'])->paginate(5),
+            "data" => Size::with(['iron'])->paginate(5),
             "locale" => Config::get('app.locale'),
         ]);
     }

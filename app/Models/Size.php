@@ -49,9 +49,9 @@ class Size extends Model
         return $this->hasMany(Iron::class, 'iron_id');
     }
 
-    public function getdata()
+    public function iron()
     {
-        return $this->hasMany('App\Models\Iron', 'id')->with('translations');
+        return $this->hasMany('App\Models\Iron', 'id')->with('translation');
     }
 
 
