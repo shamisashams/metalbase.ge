@@ -44,7 +44,6 @@ const Tiles = ({ seo, page, product, name }) => {
             <Link href={links[0].url}>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
                 <button className="arrow" style={{ transform: "rotate(-90deg)" }}>
-                    {/* <ArrowDown color="#1DBFCC" /> */}
                 </button>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
 
@@ -63,7 +62,6 @@ const Tiles = ({ seo, page, product, name }) => {
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
                 <button className="arrow" style={{ transform: "rotate(90deg)" }}>
-                    {/* <ArrowDown color="#1DBFCC" /> */}
                 </button>
             </Link>
         ) : null;

@@ -46,7 +46,6 @@ const Doors = ({ seo, page, product, product1 }) => {
             <Link href={links[0].url}>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
                 <button className="arrow" style={{ transform: "rotate(-90deg)" }}>
-                    {/* <ArrowDown color="#1DBFCC" /> */}
                 </button>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
 
@@ -65,7 +64,6 @@ const Doors = ({ seo, page, product, product1 }) => {
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
                 <button className="arrow" style={{ transform: "rotate(90deg)" }}>
-                    {/* <ArrowDown color="#1DBFCC" /> */}
                 </button>
             </Link>
         ) : null;
