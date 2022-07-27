@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Client\ServiceController;
 use App\Http\Controllers\Admin\IronController1;
-use App\Http\Controllers\client\IronController;
+use App\Http\Controllers\Client\IronController;
 use App\Http\Controllers\Client\DocumentationController;
 use App\Http\Controllers\Client\OurTeamController;
 use App\Http\Controllers\Client\LoginPageController;

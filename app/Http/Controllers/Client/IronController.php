@@ -21,6 +21,8 @@ class IronController extends Controller
     public function index()
     {
 
+
+
         $page = Page::where('key', 'home')->firstOrFail();
 
         $images = [];

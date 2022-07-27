@@ -44,7 +44,6 @@ const Tiles = ({ seo, page, product, name }) => {
             <Link href={links[0].url}>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
                 <button className="arrow" style={{ transform: "rotate(-90deg)" }}>
-                    <ArrowDown color="#1DBFCC" />
                 </button>
                 {/* <Arrow color="#2F3E51" rotate="90" /> */}
 
@@ -63,7 +62,6 @@ const Tiles = ({ seo, page, product, name }) => {
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
                 {/* <Arrow color="#2F3E51" rotate="-90" /> */}
                 <button className="arrow" style={{ transform: "rotate(90deg)" }}>
-                    <ArrowDown color="#1DBFCC" />
                 </button>
             </Link>
         ) : null;
@@ -167,12 +165,14 @@ const Tiles = ({ seo, page, product, name }) => {
                                     <div className="text-xl whitespace-nowrap mb-2">{item.title}</div>
                                     <div className="opacity-50 lowercase">ზომა: {item.height + ' x ' + item.width}</div>
                                     <div className="w-full h-60 my-5">
-                                        <img src={item.latest_image != null
+
+                                        {item.latest_image ? <img src={item.latest_image != null
                                             ? "/" +
                                             item.latest_image.path +
                                             "/" +
                                             item.latest_image.title
-                                            : null} alt="" />
+                                            : null} alt="" /> : ""}
+
                                     </div>
                                     <Link href={route("client.singleproduct.show", item.id)} className="lowercase ">
                                         {__("client.product_btn", sharedData)} <BiChevronRight className="inline-block" />

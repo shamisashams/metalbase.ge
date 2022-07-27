@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
         $Category = [
             [
                 "slug" => "filebi",
-                "ge" => ["name" => "ფილები"],
+                "ge" => ["name" => "გრანიტი"],
                 "en" => ["name" => "tiles"],
             ],
             [
