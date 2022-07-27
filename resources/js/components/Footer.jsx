@@ -1,5 +1,5 @@
-import { Link, usePage, useForm } from '@inertiajs/inertia-react'
-import React from 'react';
+import { Link, usePage, useForm } from "@inertiajs/inertia-react";
+import React from "react";
 import { contactInfo } from "./Data";
 import { categories, categoryDropdown } from "./NavData";
 import { Form } from "./Shared";
@@ -7,7 +7,10 @@ import { Form } from "./Shared";
 // import { ReactComponent as Tel } from "/assets/images/icons/svg/tel.svg";
 
 const Footer = () => {
-    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const renderHTML = (rawHTML) =>
+        React.createElement("div", {
+            dangerouslySetInnerHTML: { __html: rawHTML },
+        });
     const sharedData = usePage().props.localizations;
     const { errors, gphone, gemail, gaddress } = usePage().props;
 
@@ -85,27 +88,52 @@ const Footer = () => {
         {
             link: route("client.tiles.index"),
             text: __("client.navbar_tiles", sharedData),
-            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/tiles.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "none" }}
+                    src="/assets/images/icons/svg/tiles.svg"
+                />
+            ),
         },
         {
             link: route("client.tiles2.index"),
             text: __("client.navbar_tiles2", sharedData),
-            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/tiles2.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "none" }}
+                    src="/assets/images/icons/svg/tiles2.svg"
+                />
+            ),
         },
         {
             link: route("client.tiles3.index"),
             text: __("client.navbar_laminate", sharedData),
-            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/laminate.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "none" }}
+                    src="/assets/images/icons/svg/laminate.svg"
+                />
+            ),
         },
         {
             link: route("client.doors.index"),
             text: __("client.navbar_doors", sharedData),
-            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/door.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "none" }}
+                    src="/assets/images/icons/svg/door.svg"
+                />
+            ),
         },
         {
             link: route("client.bathroom.index"),
             text: __("client.navbar_bathroom", sharedData),
-            icon: <img style={{ backgroundColor: "none", }} src="/assets/images/icons/svg/bathroom.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "none" }}
+                    src="/assets/images/icons/svg/bathroom.svg"
+                />
+            ),
         },
     ];
 
@@ -120,8 +148,10 @@ const Footer = () => {
                                     <Link
                                         key={index}
                                         href={nav.link}
-                                        className={` md:mr-8 xl:mr-10 mr-3 text-xs sm:text-sm md:text-lg xl:text-xl  inline-block ${navigations.length === index + 1 && "!mr-0"
-                                            }`}
+                                        className={` md:mr-8 xl:mr-10 mr-3 text-xs sm:text-sm md:text-lg xl:text-xl  inline-block ${
+                                            navigations.length === index + 1 &&
+                                            "!mr-0"
+                                        }`}
                                     >
                                         {nav.text}
                                     </Link>
@@ -168,12 +198,21 @@ const Footer = () => {
                         <Form dark />
                         <a href="#" className="block mt-6">
                             {/* <Pin fill="white" className="inline-block mr-2" /> */}
-                            <img className="inline-block align-middle mr-2" src="/assets/images/icons/svg/pin.svg" />
+                            <img
+                                className="inline-block align-middle mr-2"
+                                src="/assets/images/icons/svg/pinwhite.svg"
+                            />
                             {gaddress.value}
                         </a>
-                        <a href={`tel:${contactInfo.tel}`} className="block mt-3">
+                        <a
+                            href={`tel:${contactInfo.tel}`}
+                            className="block mt-3"
+                        >
                             {/* <Tel fill="white" className="inline-block mr-2" /> */}
-                            <img className="inline-block align-middle mr-2" src="/assets/images/icons/svg/tel.svg" />
+                            <img
+                                className="inline-block align-middle mr-2"
+                                src="/assets/images/icons/svg/telwhite.svg"
+                            />
                             {gphone.value}
                         </a>
                     </div>

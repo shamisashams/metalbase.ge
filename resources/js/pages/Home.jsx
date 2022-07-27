@@ -1,6 +1,4 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import "swiper/css/navigation";
 import { ProductBox } from "../components/Shared";
 import { useRef } from "react";
@@ -13,59 +11,58 @@ import HeroSlider from "../components/HeroSlider";
 // import img4 from "../assets/images/home/4.png";
 // import img5 from "../assets/images/home/5.png";
 // import { Link } from "react-router-dom";
-import { Link, usePage } from '@inertiajs/inertia-react'
+import { Link, usePage } from "@inertiajs/inertia-react";
 import Layout from "../Layouts/Layout";
 import { BiChevronRight } from "react-icons/bi";
 // import { bathroom, doorsHome } from "../components/Data";
 import ProductSlider from "../components/ProductSlider";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+import "swiper/css";
 
 const Home = ({ seo, page, partners, tiles, doors, bath }) => {
-
-    const tileSlider = [], doorsHome = [], bathroom = [];
+    const tileSlider = [],
+        doorsHome = [],
+        bathroom = [];
 
     if (tiles.data) {
         tiles.data.map((e, i) => {
-            tileSlider.push(
-                {
-                    name: e.title,
-                    size: `${e.height} X ${e.width}`,
-                    img: `${e.latest_image.path}/${e.latest_image.title}`,
-                    link: route("client.singleproduct.show", e.id),
-                },
-            )
-        })
+            tileSlider.push({
+                name: e.title,
+                size: `${e.height} X ${e.width}`,
+                img: `${e.latest_image.path}/${e.latest_image.title}`,
+                link: route("client.singleproduct.show", e.id),
+            });
+        });
     }
-
 
     if (doors.data) {
         doors.data.map((e, i) => {
-            doorsHome.push(
-                {
-                    name: e.title,
-                    size: `${e.height} X ${e.width}`,
-                    img: `${e.latest_image.path}/${e.latest_image.title}`,
-                    link: route("client.singleproduct.show", e.id),
-                },
-            )
-        })
+            doorsHome.push({
+                name: e.title,
+                size: `${e.height} X ${e.width}`,
+                img: `${e.latest_image.path}/${e.latest_image.title}`,
+                link: route("client.singleproduct.show", e.id),
+            });
+        });
     }
     if (bath.data) {
         bath.data.map((e, i) => {
-            bathroom.push(
-                {
-                    name: e.title,
-                    size: `${e.height} X ${e.width}`,
-                    img: `${e.latest_image.path}/${e.latest_image.title}`,
-                    link: route("client.singleproduct.show", e.id),
-                },
-            )
-        })
+            bathroom.push({
+                name: e.title,
+                size: `${e.height} X ${e.width}`,
+                img: `${e.latest_image.path}/${e.latest_image.title}`,
+                link: route("client.singleproduct.show", e.id),
+            });
+        });
     }
-
 
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const renderHTML = (rawHTML) =>
+        React.createElement("div", {
+            dangerouslySetInnerHTML: { __html: rawHTML },
+        });
     const sharedData = usePage().props.localizations;
     return (
         <Layout seo={seo}>
@@ -77,10 +74,15 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                     <div className="grid sm:grid-cols-2 ">
                         <Link href={route("client.mile.index")}>
                             <div className="p-6 h-72  relative bg-slate-200 overflow-hidden">
-                                <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
-                                <div className="text-2xl my-2">{__("client.footer_miles", sharedData)}</div>
+                                <div className="opacity-50 lowercase ">
+                                    {__("client.footer_irons", sharedData)}
+                                </div>
+                                <div className="text-2xl my-2">
+                                    {__("client.footer_miles", sharedData)}
+                                </div>
                                 <div className="lowercase">
-                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)}{" "}
+                                    <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/1.png"
@@ -91,10 +93,15 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                         </Link>
                         <Link href={route("client.ortisebri.index")}>
                             <div className="p-6 h-72  relative bg-zinc-100 overflow-hidden">
-                                <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
-                                <div className="text-2xl my-2">{__("client.footer_ortesebri", sharedData)}</div>
+                                <div className="opacity-50 lowercase ">
+                                    {__("client.footer_irons", sharedData)}
+                                </div>
+                                <div className="text-2xl my-2">
+                                    {__("client.footer_ortesebri", sharedData)}
+                                </div>
                                 <div className="lowercase">
-                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)}{" "}
+                                    <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/2.png"
@@ -105,10 +112,18 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                         </Link>
                         <Link href={route("client.metalpaper.index2")}>
                             <div className="p-6 h-72  relative text-white overflow-hidden bg-gradient-to-b from-custom-blue-900/[0.5]">
-                                <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
-                                <div className="text-2xl my-2">{__("client.footer_metal_paper2", sharedData)}</div>
+                                <div className="opacity-50 lowercase ">
+                                    {__("client.footer_irons", sharedData)}
+                                </div>
+                                <div className="text-2xl my-2">
+                                    {__(
+                                        "client.footer_metal_paper2",
+                                        sharedData
+                                    )}
+                                </div>
                                 <div className="lowercase">
-                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)}{" "}
+                                    <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/3.png"
@@ -119,10 +134,15 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                         </Link>
                         <Link href={route("client.granula.index")}>
                             <div className="p-6 h-72  relative bg-gray-200 overflow-hidden">
-                                <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
-                                <div className="text-2xl my-2">{__("client.footer_granula", sharedData)}</div>
+                                <div className="opacity-50 lowercase ">
+                                    {__("client.footer_irons", sharedData)}
+                                </div>
+                                <div className="text-2xl my-2">
+                                    {__("client.footer_granula", sharedData)}
+                                </div>
                                 <div className="lowercase">
-                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
+                                    {__("client.home_button", sharedData)}{" "}
+                                    <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/4.png"
@@ -136,67 +156,129 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                         {" "}
                         <Link href={route("client.armatura.index")}>
                             <div className="p-6 lg:h-full h-72 text-white relative bg-zinc-100 overflow-hidden bg-gradient-to-b from-custom-blue-900/[0.5]">
-                                <div className="opacity-50 lowercase ">{__("client.footer_irons", sharedData)}</div>
-                                <div className="text-4xl my-5">{__("client.footer_armatura", sharedData)}</div>
-                                <div className="lowercase">
-                                    {__("client.home_button", sharedData)} <BiChevronRight className="inline-block" />
+                                <div className="relative z-10 opacity-50 lowercase ">
+                                    {__("client.footer_irons", sharedData)}
+                                </div>
+                                <div className="relative z-10 text-4xl my-5">
+                                    {__("client.footer_armatura", sharedData)}
+                                </div>
+                                <div className="relative z-10 lowercase">
+                                    {__("client.home_button", sharedData)}{" "}
+                                    <BiChevronRight className="inline-block" />
                                 </div>
                                 <img
                                     src="/assets/images/home/5.png"
                                     alt=""
-                                    className="absolute bottom-0 right-0 lg:h-auto h-2/3 "
+                                    className="absolute bottom-0 right-0 lg:h-auto h-2/3 z-0"
                                 />
                             </div>
                         </Link>
                     </div>
                 </section>
-                <section className="wrapper py-10">
-                    <Link href={route("client.partners.index")} className="text-lg hover:underline">
-                        {/* <PartnerIcon className="inline-block align-middle mr-2" /> */}
-                        <img className="inline-block align-middle mr-2" src="/assets/images/icons/svg/partners.svg" />
-                        {__("client.navbar_partners", sharedData)}
-                    </Link>
+                <section className=" py-10">
+                    <div className="wrapper">
+                        <Link
+                            href={route("client.partners.index")}
+                            className=" text-lg hover:underline"
+                        >
+                            {/* <PartnerIcon className="inline-block align-middle mr-2" /> */}
+                            <img
+                                className="inline-block align-middle mr-2"
+                                src="/assets/images/icons/svg/partners.svg"
+                            />
+                            {__("client.navbar_partners", sharedData)}
+                        </Link>
+                    </div>
                     <div className="block text-center py-10">
-                        {partners.map((item) => {
-                            return (
-                                <div
-                                    key={item.name}
-                                    className="text-center inline-block 2xl:mx-10 mx-5 mb-5 grayscale transition hover:grayscale-0"
-                                >
-                                    <div className="h-16 w-auto m-auto flex items-center justify-center mb-2">
-                                        {/* <img src={item.logo} alt="" className="object-contain " /> */}
-                                        <img src={item.latest_image != null
-                                            ? "/" +
-                                            item.latest_image.path +
-                                            "/" +
-                                            item.latest_image.title
-                                            : null} alt="" />
-                                    </div>
-                                    <div className="lowercase">{item.name}</div>
-                                </div>
-                            );
-                        })}
+                        <Swiper
+                            spaceBetween={20}
+                            slidesPerView={6}
+                            grabCursor
+                            loop
+                            speed={3000}
+                            autoplay={{
+                                delay: 1,
+                                disableOnInteraction: false,
+                            }}
+                            modules={[Autoplay]}
+                            breakpoints={{
+                                1300: {
+                                    slidesPerView: 6,
+                                },
+                                1020: {
+                                    slidesPerView: 5,
+                                },
+                                768: {
+                                    slidesPerView: 4,
+                                },
+                                500: {
+                                    slidesPerView: 3,
+                                },
+                                200: {
+                                    slidesPerView: 2,
+                                },
+                            }}
+                        >
+                            {partners.map((item) => {
+                                return (
+                                    <SwiperSlide
+                                        key={item.name}
+                                        className="text-center inline-block mb-5 grayscale transition hover:grayscale-0"
+                                    >
+                                        <div className="h-16 w-auto m-auto flex items-center justify-center mb-2">
+                                            {/* <img src={item.logo} alt="" className="object-contain " /> */}
+                                            <img
+                                                className="max-h-full"
+                                                src={
+                                                    item.latest_image != null
+                                                        ? "/" +
+                                                          item.latest_image
+                                                              .path +
+                                                          "/" +
+                                                          item.latest_image
+                                                              .title
+                                                        : null
+                                                }
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="lowercase">
+                                            {item.name}
+                                        </div>
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
                     </div>
                 </section>
                 <section className="bg-zinc-100 py-10 pb-20">
                     <div className="wrapper">
-                        <Link href={route("client.tiles.index")} className="text-lg  hover:underline">
+                        <Link
+                            href={route("client.tiles.index")}
+                            className="text-lg  hover:underline"
+                        >
                             {/* <TilesIcon className="inline-block align-middle mr-2" /> */}
 
-                            <img className="inline-block align-middle mr-2" src="/assets/images/icons/svg/tiles.svg" />
+                            <img
+                                className="inline-block align-middle mr-2"
+                                src="/assets/images/icons/svg/tilesblack.svg"
+                            />
+
                             {__("client.navbar_tiles", sharedData)}
                         </Link>
                         <ProductSlider data={tileSlider} />
-
-
-
-
                     </div>
                 </section>
                 <section className="wrapper py-10">
-                    <Link href={route("client.tiles2.index")} className="text-lg  hover:underline">
+                    <Link
+                        href={route("client.tiles2.index")}
+                        className="text-lg  hover:underline"
+                    >
                         {/* <DoorIcon className="inline-block align-middle mr-2" /> */}
-                        <img className="inline-block align-middle mr-2" src="/assets/images/icons/svg/door.svg" />
+                        <img
+                            className="inline-block align-middle mr-2"
+                            src="/assets/images/icons/svg/door.svg"
+                        />
                         {__("client.navbar_doors", sharedData)}
                     </Link>
                     <ProductSlider data={doorsHome} />
@@ -204,7 +286,10 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                 <section className="wrapper py-10 pb-20">
                     <Link href="/" className="text-lg  hover:underline">
                         {/* <Bathroom className="inline-block align-middle mr-2" /> */}
-                        <img className="inline-block align-middle mr-2" src="/assets/images/icons/svg/bathroom.svg" />
+                        <img
+                            className="inline-block align-middle mr-2"
+                            src="/assets/images/icons/svg/bathroom.svg"
+                        />
                         {__("client.navbar_bathroom", sharedData)}
                     </Link>
                     <ProductSlider data={bathroom} />

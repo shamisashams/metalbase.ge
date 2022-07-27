@@ -2,13 +2,16 @@ import React from "react";
 import { contactInfo } from "../components/Data";
 import { Form } from "../components/Shared";
 import { BiChevronRight } from "react-icons/bi";
-import { Link, usePage } from '@inertiajs/inertia-react'
+import { Link, usePage } from "@inertiajs/inertia-react";
 // import { ReactComponent as Pin } from "/assets/images/icons/svg/pin.svg";
 // import { ReactComponent as Tel } from "/assets/images/icons/svg/tel.svg";
 import Layout from "../Layouts/Layout";
 
 const Contact = ({ seo, page, gphone, gemail, gaddress }) => {
-    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const renderHTML = (rawHTML) =>
+        React.createElement("div", {
+            dangerouslySetInnerHTML: { __html: rawHTML },
+        });
     const sharedData = usePage().props.localizations;
     return (
         <Layout seo={seo}>
@@ -16,33 +19,55 @@ const Contact = ({ seo, page, gphone, gemail, gaddress }) => {
                 <div className="wrapper pb-20">
                     <div className="max-w-sm">
                         <div className="block pt-6">
-                            <p className="opacity-50 inline-block  lowercase">{__("client.navbar_main", sharedData)}</p>
+                            <p className="opacity-50 inline-block  lowercase">
+                                {__("client.navbar_main", sharedData)}
+                            </p>
 
                             <BiChevronRight className="inline-block mx-1" />
-                            <p className="  inline-block lowercase">{__("client.navbar_contact", sharedData)}</p>
+                            <p className="  inline-block lowercase">
+                                {__("client.navbar_contact", sharedData)}
+                            </p>
                         </div>
                         <div className="text-lg mb-5 sm:mt-20 mt-10">
                             {__("client.contact_contact_info", sharedData)}
-
                         </div>
-                        <a href={`tel:${contactInfo.tel}`} className="flex items-center mt-6">
+                        <a
+                            href={`tel:${contactInfo.tel}`}
+                            className="flex items-center mt-6"
+                        >
                             <div className="w-12 h-12 rounded-full flex items-center justify-center mr-2 bg-custom-blue-900/[0.1]">
                                 {/* <Tel fill="custom-blue-900" /> */}
-                                <img className="bg-custom-blue-900" src="/assets/images/icons/svg/pin.svg" />
+                                <img
+                                    className=""
+                                    src="/assets/images/icons/svg/pin.svg"
+                                />
                             </div>
                             <div>
-                                <div className="lowercase">{__("client.contact_address", sharedData)}</div>
-                                <div className="opacity-50"> {gaddress.value}</div>
+                                <div className="lowercase">
+                                    {__("client.contact_address", sharedData)}
+                                </div>
+                                <div className="opacity-50">
+                                    {" "}
+                                    {gaddress.value}
+                                </div>
                             </div>
                         </a>
                         <a href="#" className="flex items-center mt-3">
                             <div className="w-12 h-12 rounded-full flex items-center justify-center mr-2 bg-custom-blue-900/[0.1]">
                                 {/* <Pin fill="custom-blue-900" /> */}
-                                <img className="bg-custom-blue-900" src="/assets/images/icons/svg/pin.svg" />
+                                <img
+                                    className=""
+                                    src="/assets/images/icons/svg/tel.svg"
+                                />
                             </div>
                             <div>
-                                <div className="lowercase">{__("client.contact_phone", sharedData)}</div>
-                                <div className="opacity-50"> {gphone.value}</div>
+                                <div className="lowercase">
+                                    {__("client.contact_phone", sharedData)}
+                                </div>
+                                <div className="opacity-50">
+                                    {" "}
+                                    {gphone.value}
+                                </div>
                             </div>
                         </a>
                         <div className="text-lg mb-5 mt-10">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, usePage } from '@inertiajs/inertia-react'
+import { Link, usePage } from "@inertiajs/inertia-react";
 // import Logo from "../assets/images/logo.png";
 import { FaPhone } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
@@ -9,30 +9,33 @@ import { RiMenuAddFill } from "react-icons/ri";
 // import Ge from "../assets/images/icons/ge.png";
 // import En from "../assets/images/icons/en.png";
 import { categoryDropdown } from "./NavData";
-import { useForm } from '@inertiajs/inertia-react'
+import { useForm } from "@inertiajs/inertia-react";
 import { contactInfo } from "./Data";
-import { Inertia } from '@inertiajs/inertia'
+import { Inertia } from "@inertiajs/inertia";
 
 const Navbar = ({ seo, page }) => {
     const [values, setValues] = useState({
         query: "",
-    })
+    });
 
     function handleChange(e) {
         const key = e.target.id;
-        const value = e.target.value
-        setValues(values => ({
+        const value = e.target.value;
+        setValues((values) => ({
             ...values,
             [key]: value,
-        }))
+        }));
     }
 
     function handleSubmit(e) {
-        e.preventDefault()
-        Inertia.get(route("client.search.index"), values)
+        e.preventDefault();
+        Inertia.get(route("client.search.index"), values);
     }
 
-    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const renderHTML = (rawHTML) =>
+        React.createElement("div", {
+            dangerouslySetInnerHTML: { __html: rawHTML },
+        });
     const sharedData = usePage().props.localizations;
 
     const navigations = [
@@ -58,42 +61,75 @@ const Navbar = ({ seo, page }) => {
         {
             link: route("client.tiles.index"),
             text: __("client.navbar_tiles", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/tiles.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "#fff" }}
+                    src="/assets/images/icons/svg/tiles.svg"
+                />
+            ),
         },
         {
             link: route("client.tiles2.index"),
             text: __("client.navbar_tiles2", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/tiles2.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "#fff" }}
+                    src="/assets/images/icons/svg/tiles2.svg"
+                />
+            ),
         },
         {
             link: route("client.tiles3.index"),
             text: __("client.navbar_laminate", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="//assets/images/icons/svg/laminate.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "#fff" }}
+                    src="//assets/images/icons/svg/laminate.svg"
+                />
+            ),
         },
         {
             link: route("client.doors.index"),
             text: __("client.navbar_doors", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/door.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "#fff" }}
+                    src="/assets/images/icons/svg/door.svg"
+                />
+            ),
         },
         {
             link: route("client.bathroom.index"),
             text: __("client.navbar_bathroom", sharedData),
-            icon: <img style={{ backgroundColor: "#fff", }} src="/assets/images/icons/svg/bathroom.svg" />,
+            icon: (
+                <img
+                    style={{ backgroundColor: "#fff" }}
+                    src="/assets/images/icons/svg/bathroom.svg"
+                />
+            ),
         },
     ];
     const langarr = {
-        "ge": 'ქართული',
-        "en": 'english'
-    }
+        ge: "ქართული",
+        en: "english",
+    };
 
     const langFlags = {
-        "ქართული": "/assets/images/icons/ge.png",
-        "English": "/assets/images/icons/en.png",
-        "ge": "/assets/images/icons/ge.png",
-        "en": "/assets/images/icons/en.png",
-    }
+        ქართული: "/assets/images/icons/ge.png",
+        English: "/assets/images/icons/en.png",
+        ge: "/assets/images/icons/ge.png",
+        en: "/assets/images/icons/en.png",
+    };
     const [showMenu, setShowMenu] = useState(false);
-    const { errors, gphone, gemail, gaddress, locales, currentLocale, locale_urls } = usePage().props;
+    const {
+        errors,
+        gphone,
+        gemail,
+        gaddress,
+        locales,
+        currentLocale,
+        locale_urls,
+    } = usePage().props;
 
     const categoryDropdown = [
         {
@@ -148,7 +184,11 @@ const Navbar = ({ seo, page }) => {
     return (
         <div className="text-sm relative z-50 h-12 bg-custom-blue-900 lg:h-auto flex items-center justify-between">
             <Link href="/" className="lg:hidden pl-3">
-                <img src="/assets/images/logo.png" alt="" className="w-52 py-1" />
+                <img
+                    src="/assets/images/logo.png"
+                    alt=""
+                    className="w-52 py-1"
+                />
             </Link>
             <button
                 className="text-white lg:hidden px-3"
@@ -157,8 +197,9 @@ const Navbar = ({ seo, page }) => {
                 <RiMenuAddFill className="w-6 h-6" />
             </button>
             <div
-                className={`fixed left-0 top-0 w-full h-screen flex flex-col justify-center items-center  lg:relative lg:h-auto bg-white lg:block transition duration-500 lg:!translate-y-0 lg:!opacity-100 ${showMenu ? "translate-y-0" : "-translate-y-full"
-                    }  `}
+                className={`fixed left-0 top-0 w-full h-screen flex flex-col justify-center items-center  lg:relative lg:h-auto bg-white lg:block transition duration-500 lg:!translate-y-0 lg:!opacity-100 ${
+                    showMenu ? "translate-y-0" : "-translate-y-full"
+                }  `}
             >
                 <button
                     className="absolute top-14 right-3 lg:hidden"
@@ -169,8 +210,15 @@ const Navbar = ({ seo, page }) => {
                 <div className="lg:bg-custom-blue-900   lg:text-white  ">
                     <div className="wrapper flex items-center justify-between">
                         <div className="flex items-center whitespace-nowrap lg:!mb-0 mb-5 -ml-6 lg:ml-0">
-                            <Link href={route("client.home.index")} className="hidden lg:inline-block">
-                                <img src="/assets/images/logo.png" alt="" className="w-80  h-auto py-1" />
+                            <Link
+                                href={route("client.home.index")}
+                                className="hidden lg:inline-block"
+                            >
+                                <img
+                                    src="/assets/images/logo.png"
+                                    alt=""
+                                    className="w-80  h-auto py-1"
+                                />
                             </Link>
                             <div>
                                 {navigations.map((nav, index) => {
@@ -197,17 +245,17 @@ const Navbar = ({ seo, page }) => {
 
                             {/* languages */}
 
-
-
                             <div className="lg:relative lg:top-auto lg:left-auto inline-block absolute top-14 left-3 group">
                                 <div className="w-6 h-6 overflow-hidden">
                                     {/* {langarr[currentLocale]} */}
                                     {/* <img src="/assets/images/icons/ge.png" alt="" /> */}
-                                    <img src={langFlags[currentLocale]} alt="" />
+                                    <img
+                                        src={langFlags[currentLocale]}
+                                        alt=""
+                                    />
                                 </div>
 
                                 <div className="absolute right-0 top-full w-full pt-2 lg:hidden group-hover:block">
-
                                     {/* {
                                         Object.keys(locales).map((e, i) => {
                                             return (
@@ -216,7 +264,17 @@ const Navbar = ({ seo, page }) => {
                                         })
                                     } */}
 
-                                    {currentLocale == 'ge' ? <Link href={locale_urls['English']}> <img src={langFlags['en']} alt="" /></Link> : <Link href={locale_urls['ქართული']}> <img src={langFlags['ge']} alt="" /></Link>}
+                                    {currentLocale == "ge" ? (
+                                        <Link href={locale_urls["English"]}>
+                                            {" "}
+                                            <img src={langFlags["en"]} alt="" />
+                                        </Link>
+                                    ) : (
+                                        <Link href={locale_urls["ქართული"]}>
+                                            {" "}
+                                            <img src={langFlags["ge"]} alt="" />
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -253,27 +311,31 @@ const Navbar = ({ seo, page }) => {
                             })}
                         </div>
 
-                        <form onSubmit={handleSubmit} className="lg:relative lg:top-auto lg:right-auto flex items-center justify-between bg-custom-blue-900/[.1] h-12 px-5 lg:w-72 absolute top-0 right-0 w-full">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="lg:relative lg:top-auto lg:right-auto flex items-center justify-between bg-custom-blue-900/[.1] h-12 px-5 lg:w-72 absolute top-0 right-0 w-full"
+                        >
                             <input
                                 id="query"
                                 value={values.query}
                                 onChange={handleChange}
                                 type="text"
-                                name='query'
+                                name="query"
                                 className="h-full w-full outline-0  bg-transparent  text-sm placeholder:text-custom-blue-900"
-                                placeholder={__("client.navbar_search", sharedData)}
+                                placeholder={__(
+                                    "client.navbar_search",
+                                    sharedData
+                                )}
                             />
                             {/* <FiSearch className=" shrink-0 w-6 h-6" /> */}
-                            <button type="submit"><FiSearch className=" shrink-0 w-6 h-6" /></button>
+                            <button type="submit">
+                                <FiSearch className=" shrink-0 w-6 h-6" />
+                            </button>
                         </form>
-
-
-
-
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

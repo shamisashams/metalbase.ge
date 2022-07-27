@@ -13,13 +13,10 @@
     src: url("/assets/fonts/BPGArialCaps2010.ttf");
 }
 
-
-
 /* general */
 * {
     font-family: "bpg-caps";
 }
-
 .wrapper {
     width: 1640px;
     margin: auto;
@@ -57,7 +54,6 @@
 
 /* responsive */
 @media screen and (max-width: 1700px) {
-
     .wrapper,
     .swiper-pagination {
         width: 95% !important;
