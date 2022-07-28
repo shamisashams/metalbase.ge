@@ -2,10 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import img1 from "../assets/images/home/slider/1.png";
 import React from "react";
 // import img2 from "../assets/images/home/slider/2.png";
-import { Link, usePage } from '@inertiajs/inertia-react'
+import { Link, usePage } from "@inertiajs/inertia-react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 
 const HeroSlider = (props) => {
     return (
@@ -14,14 +14,16 @@ const HeroSlider = (props) => {
             pagination={{
                 clickable: true,
             }}
-            modules={[Pagination]}
+            autoplay={{
+                delay: 3000,
+            }}
+            speed={2000}
+            modules={[Pagination, Autoplay]}
             slidesPerView={1}
             loop
             grabCursor
             className="lg:h-96 h-72 text-white"
         >
-
-
             {/*
             <SwiperSlide className="bg-custom-blue-500">
                 <img
@@ -56,34 +58,35 @@ const HeroSlider = (props) => {
                     </p>
                 </div>
             </SwiperSlide> */}
-
-
-            {
-                usePage().props.sliders.map((e, i) => {
-                    return (
-                        <SwiperSlide className="bg-custom-blue-500" key={i}>
-                            {/* <img
+            {usePage().props.sliders.map((e, i) => {
+                return (
+                    <SwiperSlide className="select-none" key={i}>
+                        {/* <img
                                 src="/assets/images/home/slider/1.png"
                                 className="w-full h-full absolute -z-10 object-cover"
                                 alt=""
                             /> */}
 
-                            <img className="w-full h-full absolute -z-10 object-cover" src={e.file != null
-                                ? "/" +
-                                e.file.path +
-                                "/" +
-                                e.file.title
-                                : null} alt="" />
-                            <div className="wrapper flex flex-col justify-end items-start h-full pb-12 ">
-                                <div className="lg:text-2xl text-xl mb-2">{e.title}</div>
-                                <p className="lg:text-sm text-xs text-justify max-w-xl">
-                                    {e.description}
-                                </p>
+                        <img
+                            className="w-full h-full absolute -z-10 object-cover"
+                            src={
+                                e.file != null
+                                    ? "/" + e.file.path + "/" + e.file.title
+                                    : null
+                            }
+                            alt=""
+                        />
+                        <div className="wrapper flex flex-col justify-end items-start h-full pb-12 ">
+                            <div className="lg:text-2xl text-xl mb-2">
+                                {e.title}
                             </div>
-                        </SwiperSlide>
-                    )
-                })
-            }
+                            <p className="lg:text-sm text-xs text-justify max-w-xl">
+                                {e.description}
+                            </p>
+                        </div>
+                    </SwiperSlide>
+                );
+            })}
             ...
         </Swiper>
     );

@@ -40,6 +40,7 @@
     border-radius: 0 !important;
     background-color: #fff !important;
     margin: 0 8px !important;
+    transition: 0.3s;
 }
 
 .swiper-button-next,
