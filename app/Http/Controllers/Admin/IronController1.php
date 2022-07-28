@@ -83,4 +83,14 @@ class IronController1 extends Controller
         Size::where("iron_id", $request->id)->update(["size" => $request->size]);
         return redirect()->back();
     }
+
+    public function search(Request $request)
+    {
+        // dd($request->search);
+
+        // $result = Size::paginate(5);
+
+        // $searchedProducts = Size::with(['iron'])->whereTranslationLike('title', '%' . $request->search . '%')->get();
+        dd(Size::with('iron', 'translations')->whereTranslationLike('name', '%' . $request->search . '%')->get());
+    }
 }

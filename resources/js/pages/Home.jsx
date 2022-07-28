@@ -239,11 +239,11 @@ const Home = ({ seo, page, partners, tiles, doors, bath }) => {
                                                 src={
                                                     item.latest_image != null
                                                         ? "/" +
-                                                          item.latest_image
-                                                              .path +
-                                                          "/" +
-                                                          item.latest_image
-                                                              .title
+                                                        item.latest_image
+                                                            .path +
+                                                        "/" +
+                                                        item.latest_image
+                                                            .title
                                                         : null
                                                 }
                                                 alt=""

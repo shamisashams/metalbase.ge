@@ -74,6 +74,7 @@ Route::prefix('{locale?}')
                 Route::post('create_iron', [IronController1::class, 'create'])->name("admin.irons.create");
                 Route::get('destroy/{id}', [IronController1::class, 'destroy'])->name("admin.irons.del");
                 Route::post('update', [IronController1::class, 'update'])->name("admin.irons.update");
+                Route::get('search', [IronController1::class, 'search'])->name("admin.irons.search");
 
                 // Product
                 Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);

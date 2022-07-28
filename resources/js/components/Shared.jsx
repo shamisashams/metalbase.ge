@@ -32,11 +32,11 @@ export const Form = ({ dark }) => {
     const sharedData = usePage().props.localizations;
     return (
         <form className="w-full">
-            <input type="text" placeholder={__("client_form_fullname", sharedData)} className={classList} />
-            <input type="text" placeholder={__("client_form_phone", sharedData)} className={classList} />
-            <input type="text" placeholder={__("client_form_mail", sharedData)} className={classList} />
+            <input type="text" placeholder={__("client.form_fullname", sharedData)} className={classList} />
+            <input type="text" placeholder={__("client.form_mobilephone", sharedData)} className={classList} />
+            <input type="text" placeholder={__("client.form_email", sharedData)} className={classList} />
             <textarea
-                placeholder={__("client_form_massage", sharedData)}
+                placeholder={__("client.form_massage", sharedData)}
                 className={classList + " !mb-6 h-24 pt-2"}
             ></textarea>
             <button

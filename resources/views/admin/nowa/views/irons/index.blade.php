@@ -51,6 +51,16 @@
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td></td>
+            <form method='get' action={{route('admin.irons.search')}}>
+                {{-- @csrf --}}
+                <td>
+                    <input class="form-control" name='search' placeholder="search">
+                </td>
+            </form>
+              <td></td>
+        </tr>
         @foreach ($sizes as $v)
 
   {{-- @dd($v->iron) --}}
@@ -61,7 +71,7 @@
                 @csrf
             <td>
                 <input class="form-control" type="text" value="{{$v->size}}" name="size">
-                <input class="form-control" type="hidden" name='id' value="{{$v->iron_id}}"
+                <input class="form-control" type="hidden" name='id' value="{{$v->iron_id}}">
             </td>
             <td>
                 <a href="{{locale_route('admin.irons.del',$v->id)}}"
