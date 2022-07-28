@@ -148,10 +148,9 @@ const Footer = () => {
                                     <Link
                                         key={index}
                                         href={nav.link}
-                                        className={` md:mr-8 xl:mr-10 mr-3 text-xs sm:text-sm md:text-lg xl:text-xl  inline-block ${
-                                            navigations.length === index + 1 &&
+                                        className={` md:mr-8 xl:mr-10 mr-3 text-xs sm:text-sm md:text-lg xl:text-xl  inline-block ${navigations.length === index + 1 &&
                                             "!mr-0"
-                                        }`}
+                                            }`}
                                     >
                                         {nav.text}
                                     </Link>
