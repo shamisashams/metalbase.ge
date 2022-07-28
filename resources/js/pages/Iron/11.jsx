@@ -49,7 +49,7 @@ const Iron1 = ({ seo, page, sizes }) => {
                         <BiChevronRight className="inline-block mx-1" />
                         <p className="opacity-50  inline-block lowercase">რკინეული</p>
                         <BiChevronRight className="inline-block mx-1" />
-                        <p className="inline-block lowercase">გრანულა</p>
+                        <p className="inline-block lowercase">გლინულა</p>
                     </div>
                     <div className="text-3xl my-10">გრანულა</div>
                 </div>
