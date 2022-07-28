@@ -58,7 +58,7 @@ const SingleProduct = ({ seo, page, product, sameproduct }) => {
                 </div>
                 <div className="flex flex-col lg:flex-row items-start justify-start mb-12">
                     <div className="lg:w-1/3 lg:h-96 lg:mx-0 lg:mr-10 w-auto mx-auto mb-10 ">
-                        <img className="main_img"
+                        <img className="w-full h-full object-contain"
                             src={product.latest_image != null
                                 ? "/" +
                                 product.latest_image.path +
