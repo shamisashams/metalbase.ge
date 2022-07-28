@@ -8,7 +8,6 @@
 
 @section('content')
 
-
 <div class="container-fluid bg-white ">
     {{-- <h5 class='mb-2 pt-2'>admin.irons</h5> --}}
     <div class="card-header pb-0">
@@ -61,33 +60,65 @@
             </form>
               <td></td>
         </tr>
+
+        @if ($search != [])
+        @foreach ($search as $v)
+              <tr>
+                  <td>{{$v->id}}</td>
+                  <td>{{$v->iron->name}}</td>
+                  <form action={{route('admin.irons.update')}} method="post">
+                      @csrf
+                  <td>
+                      <input class="form-control" type="text" value="{{$v->size}}" name="size">
+                      <input class="form-control" type="hidden" name='id' value="{{$v->iron_id}}">
+                  </td>
+                  <td>
+                      <a href="{{locale_route('admin.irons.del',$v->id)}}"
+                          onclick="return confirm('Are you sure?')" class="pl-3">
+                           <i class="fa fa-edit">წაშლა</i>
+                       </a>
+                  </td>
+                  <td>
+                      <button class='btn' href="{{locale_route('admin.irons.update',$v->id)}}"
+                      class="pl-3">
+                       <i class="fa fa-edit">შეცვლა</i>
+                      </button>
+                  </td>
+              </form>
+              </tr>
+              @endforeach
+        @else
         @foreach ($sizes as $v)
 
-  {{-- @dd($v->iron) --}}
-        <tr>
-            <td>{{$v->id}}</td>
-            <td>{{$v->iron->name}}</td>
-            <form action={{route('admin.irons.update')}} method="post">
-                @csrf
-            <td>
-                <input class="form-control" type="text" value="{{$v->size}}" name="size">
-                <input class="form-control" type="hidden" name='id' value="{{$v->iron_id}}">
-            </td>
-            <td>
-                <a href="{{locale_route('admin.irons.del',$v->id)}}"
-                    onclick="return confirm('Are you sure?')" class="pl-3">
-                     <i class="fa fa-edit">წაშლა</i>
-                 </a>
-            </td>
-            <td>
-                <button class='btn' href="{{locale_route('admin.irons.update',$v->id)}}"
-                class="pl-3">
-                 <i class="fa fa-edit">შეცვლა</i>
-                </button>
-            </td>
-        </form>
-        </tr>
-        @endforeach
+        {{-- @dd($v->iron) --}}
+              <tr>
+                  <td>{{$v->id}}</td>
+                  <td>{{$v->iron->name}}</td>
+                  <form action={{route('admin.irons.update')}} method="post">
+                      @csrf
+                  <td>
+                      <input class="form-control" type="text" value="{{$v->size}}" name="size">
+                      <input class="form-control" type="hidden" name='id' value="{{$v->iron_id}}">
+                  </td>
+                  <td>
+                      <a href="{{locale_route('admin.irons.del',$v->id)}}"
+                          onclick="return confirm('Are you sure?')" class="pl-3">
+                           <i class="fa fa-edit">წაშლა</i>
+                       </a>
+                  </td>
+                  <td>
+                      <button class='btn' href="{{locale_route('admin.irons.update',$v->id)}}"
+                      class="pl-3">
+                       <i class="fa fa-edit">შეცვლა</i>
+                      </button>
+                  </td>
+              </form>
+              </tr>
+              @endforeach
+        @endif
+
+
+
 
     </tbody>
 </table>

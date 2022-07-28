@@ -85,7 +85,7 @@ const Contact = ({ seo, page, gphone, gemail, gaddress }) => {
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
+                    ></iframe>{" "}
                 </div>
             </div>
         </Layout>
