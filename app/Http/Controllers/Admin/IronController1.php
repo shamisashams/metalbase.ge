@@ -57,6 +57,7 @@ class IronController1 extends Controller
             "zoma" => Iron::with('translations')->get(),
             "sizes" => Size::paginate(5),
             "locale" => Config::get('app.locale'),
+            "search" => []
         ]);
     }
 
@@ -89,8 +90,23 @@ class IronController1 extends Controller
         // dd($request->search);
 
         // $result = Size::paginate(5);
+        $category = Iron::with("translations")->whereTranslationLike('name', '%' . $request->search . '%')->get();
 
-        // $searchedProducts = Size::with(['iron'])->whereTranslationLike('title', '%' . $request->search . '%')->get();
-        dd(Size::with('iron', 'translations')->whereTranslationLike('name', '%' . $request->search . '%')->get());
+        if (count($category)) {
+            $searched = Size::where('iron_id', $category[0]->id)->get();
+            return view('admin.nowa.views.irons.index', [
+                "zoma" => Iron::with('translations')->get(),
+                "sizes" => Size::paginate(5),
+                "locale" => Config::get('app.locale'),
+                'search' => $searched,
+            ]);
+        } else {
+            return view('admin.nowa.views.irons.index', [
+                "zoma" => Iron::with('translations')->get(),
+                "sizes" => Size::paginate(5),
+                "locale" => Config::get('app.locale'),
+                'search' => [],
+            ]);
+        }
     }
 }
