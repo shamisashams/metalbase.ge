@@ -69,7 +69,7 @@ const Iron1 = ({ seo, page, gphone, gemail, gaddress, sizes }) => {
                     />
                     <div className="wrapper">
                         <div className="max-w-lg lowercase text-justify relative z-20">
-
+                            {renderHTML(__('client.profile_miles_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                         </div>
                         <select
                             name=""
@@ -100,7 +100,7 @@ const Iron1 = ({ seo, page, gphone, gemail, gaddress, sizes }) => {
                             {otherIrons.map((item, index) => {
                                 return (
                                     <Link
-                                        to={item.link}
+                                        href={item.link}
                                         key={index}
                                         className="inline-block mr-8 mb-8 relative z-20"
                                     >

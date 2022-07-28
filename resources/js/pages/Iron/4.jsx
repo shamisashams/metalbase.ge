@@ -2,6 +2,7 @@ import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 // import bg from "../../assets/images/iron/bg.png";
 import { contactInfo } from "../../components/Data";
+
 import { FaPhone } from "react-icons/fa";
 // import img1 from "../../assets/images/iron/1.png";
 // import img2 from "../../assets/images/iron/2.png";
@@ -9,37 +10,41 @@ import { FaPhone } from "react-icons/fa";
 // import img4 from "../../assets/images/iron/4.png";
 // import img5 from "../../assets/images/iron/5.png";
 // import img6 from "../../assets/images/iron/6.png";
-import { Link } from '@inertiajs/inertia-react';
+import { Link, usePage } from '@inertiajs/inertia-react';
 import Layout from "../../Layouts/Layout";
 
-const Iron1 = ({ seo, page, sizes }) => {
+const Iron1 = ({ seo, page, sizes, gphone, gemail, gaddress }) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
     const otherIrons = [
         {
             img: "/assets/images/iron/2.png",
-            name: "ორტესებრი",
-            link: "/iron/2",
+            name: __("client.footer_ortesebri", sharedData),
+            link: route("client.ortisebri.index"),
         },
         {
             img: "/assets/images/iron/3.png",
-            name: "გლინულა",
-            link: "/iron/2",
+            name: __("client.footer_granula", sharedData),
+            link: route("client.granula.index"),
         },
         {
             img: "/assets/images/iron/4.png",
-            name: "არმატურა",
-            link: "/iron/2",
+            name: __("client.footer_armatura", sharedData),
+            link: route("client.armatura.index"),
         },
         {
             img: "/assets/images/iron/5.png",
-            name: "კუთხოვანა",
-            link: "/iron/2",
+            name: __("client.footer_kutxovana", sharedData),
+            link: route("client.kutxovana.index"),
         },
         {
             img: "/assets/images/iron/6.png",
-            name: "მილი",
-            link: "/iron/2",
+            name: __("client.footer_miles", sharedData),
+            link: route("client.mile.index"),
         },
     ];
+
+
     return (
         <Layout seo={seo}>
             <div>
@@ -49,9 +54,9 @@ const Iron1 = ({ seo, page, sizes }) => {
                         <BiChevronRight className="inline-block mx-1" />
                         <p className="opacity-50  inline-block lowercase">რკინეული</p>
                         <BiChevronRight className="inline-block mx-1" />
-                        <p className="inline-block lowercase">ლითონის ფურცელი</p>
+                        <p className="inline-block lowercase">{__("client.footer_metal_paper", sharedData)}</p>
                     </div>
-                    <div className="text-3xl my-10">ლითონის ფურცელი</div>
+                    <div className="text-3xl my-10">{__("client.footer_metal_paper", sharedData)}</div>
                 </div>
                 <div
                     className="py-10 mb-20 bg-cover bg-no-repeat bg-center relative overflow-hidden"
@@ -64,9 +69,7 @@ const Iron1 = ({ seo, page, sizes }) => {
                     />
                     <div className="wrapper">
                         <div className="max-w-lg lowercase text-justify relative z-20">
-                            პროდუქტის აღწერა, რა არის, რისთვის გამოიყენება, როგორ მზადდება. ამ
-                            კონკრეტულ შემთხვევაში როგორი ხარისხისაა, საიდან არის შემოტანილი ან
-                            სადაა წარმოებული და ა.შ.
+                            {renderHTML(__('client.metal_paper_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                         </div>
                         <select
                             name=""
@@ -87,9 +90,9 @@ const Iron1 = ({ seo, page, sizes }) => {
                             }
                         </select>
                         <div>შესაკვეთად დაგვიკავშირდით</div>
-                        <a href={`tel:${contactInfo.tel}`}>
+                        <a href={`tel:${gphone.value}`}>
                             <FaPhone className="inline-block mr-2" />
-                            {contactInfo.tel}
+                            {gphone.value}
                         </a>
                         <div className="mt-12 mb-4">მსგავსი პროდუქტი</div>
                         <div className="block">

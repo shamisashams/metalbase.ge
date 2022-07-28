@@ -14,10 +14,17 @@ import { CgChevronDoubleRight } from "react-icons/cg";
 
 const SingleProduct = ({ seo, page, product, sameproduct }) => {
 
+    console.log(product);
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
+    const categories = [
 
-    console.log(sameproduct, 'esa');
+
+
+
+        '/assets/images/icons/svg/tiles.svg', '/assets/images/icons/svg/tiles2.svg', '/assets/images/icons/svg/laminate.svg',
+        '/assets/images/icons/svg/door.svg', '/assets/images/icons/svg/bathroom.svg'
+    ];
     const otherItems = [
         {
             img: "/assets/images/products/1.png",
@@ -54,7 +61,7 @@ const SingleProduct = ({ seo, page, product, sameproduct }) => {
                 </div>
                 <div className="mt-10 mb-12 text-2xl ">
                     {/* <TilesIcon className="inline-block" /> Arabesco Antic Marfil */}
-                    <img className="inline-block" src="/assets/images/icons/svg/tiles.svg" /> {product.title}
+                    <img className="inline-block" src='/assets/images/icons/svg/tiles.svg' alt='asd' /> {product.title}
                 </div>
                 <div className="flex flex-col lg:flex-row items-start justify-start mb-12">
                     <div className="lg:w-1/3 lg:h-96 lg:mx-0 lg:mr-10 w-auto mx-auto mb-10 ">
