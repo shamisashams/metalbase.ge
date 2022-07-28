@@ -51,7 +51,7 @@ const Iron1 = ({ seo, page, sizes }) => {
                         <BiChevronRight className="inline-block mx-1" />
                         <p className="inline-block lowercase">გლინულა</p>
                     </div>
-                    <div className="text-3xl my-10">გრანულა</div>
+                    <div className="text-3xl my-10">გლინულა</div>
                 </div>
                 <div
                     className="py-10 mb-20 bg-cover bg-no-repeat bg-center relative overflow-hidden"
