@@ -78,7 +78,7 @@ const Iron1 = ({ seo, page, sizes }) => {
                                 შეარჩიე ზომა
                             </option>
                             {
-                                sizes.data.map((e) => {
+                                sizes.map((e) => {
                                     return (
                                         <option className="py-2 text-sm lowercase" value="">
                                             {e.size}
