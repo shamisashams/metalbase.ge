@@ -122,10 +122,22 @@
 
     </tbody>
 </table>
+
+@if ($search != [])
+<div class="contaner">
+
+    {{ $search->appends(request()->input())->links('admin.vendor.pagination.material') }}
+</div>
+@else
 <div class="contaner">
 
     {{ $sizes->appends(request()->input())->links('admin.vendor.pagination.material') }}
 </div>
+@endif
+{{-- <div class="contaner">
+
+    {{ $sizes->appends(request()->input())->links('admin.vendor.pagination.material') }}
+</div> --}}
 
 @endsection
 

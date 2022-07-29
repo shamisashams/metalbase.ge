@@ -92,8 +92,18 @@ class IronController1 extends Controller
         // $result = Size::paginate(5);
         $category = Iron::with("translations")->whereTranslationLike('name', '%' . $request->search . '%')->get();
 
-        if (count($category)) {
-            $searched = Size::where('iron_id', $category[0]->id)->get();
+        if (count($category) > 0) {
+
+            if ($request->search == null) {
+                return view('admin.nowa.views.irons.index', [
+                    "zoma" => Iron::with('translations')->get(),
+                    "sizes" => Size::paginate(5),
+                    "locale" => Config::get('app.locale'),
+                    'search' => [],
+                ]);
+            };
+
+            $searched = Size::where('iron_id', $category[0]->id)->paginate(5);
             return view('admin.nowa.views.irons.index', [
                 "zoma" => Iron::with('translations')->get(),
                 "sizes" => Size::paginate(5),
