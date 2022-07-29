@@ -87,36 +87,90 @@ class IronController1 extends Controller
 
     public function search(Request $request)
     {
-        // dd($request->search);
-
-        // $result = Size::paginate(5);
+        $searchSize = Size::where('size', 'LIKE', "%$request->size%")->paginate(5);
         $category = Iron::with("translations")->whereTranslationLike('name', '%' . $request->search . '%')->get();
 
-        if (count($category) > 0) {
+        // $searchSize = Size::where('size', $request->size)->get();
 
-            if ($request->search == null) {
+
+        function checkSize($search)
+        {
+            global $request;
+            if (count($search) > 0) {
+                if ($request->size == null) {
+                    return Size::paginate(5);
+                } else {
+                    return $search;
+                }
+                return $search;
+            } else {
+                return [];
+            }
+        }
+
+
+
+        // dd(checkSize($searchSize));
+        if ($request->search) {
+            if (count($category) > 0) {
+                if ($request->search == null) {
+                    return view('admin.nowa.views.irons.index', [
+                        "zoma" => Iron::with('translations')->get(),
+                        "sizes" => Size::paginate(5),
+                        "locale" => Config::get('app.locale'),
+                        'search' => [],
+                    ]);
+                };
+                $searched = Size::where('iron_id', $category[0]->id)->paginate(5);
                 return view('admin.nowa.views.irons.index', [
                     "zoma" => Iron::with('translations')->get(),
                     "sizes" => Size::paginate(5),
                     "locale" => Config::get('app.locale'),
-                    'search' => [],
+                    'search' => $searched,
                 ]);
-            };
-
-            $searched = Size::where('iron_id', $category[0]->id)->paginate(5);
-            return view('admin.nowa.views.irons.index', [
-                "zoma" => Iron::with('translations')->get(),
-                "sizes" => Size::paginate(5),
-                "locale" => Config::get('app.locale'),
-                'search' => $searched,
-            ]);
-        } else {
-            return view('admin.nowa.views.irons.index', [
-                "zoma" => Iron::with('translations')->get(),
-                "sizes" => Size::paginate(5),
-                "locale" => Config::get('app.locale'),
-                'search' => [],
-            ]);
+            }
+        } elseif ($request->size) {
+            if (count($searchSize) > 0) {
+                $searched = Size::where('iron_id', $searchSize[0]->id)->paginate(5);
+                return view('admin.nowa.views.irons.index', [
+                    "zoma" => Iron::with('translations')->get(),
+                    "sizes" => Size::paginate(5),
+                    "locale" => Config::get('app.locale'),
+                    'search' => checkSize($searchSize),
+                ]);
+            }
         }
+
+        // if (count($category) > 0) {
+        //     if ($request->search == null) {
+        //         return view('admin.nowa.views.irons.index', [
+        //             "zoma" => Iron::with('translations')->get(),
+        //             "sizes" => Size::paginate(5),
+        //             "locale" => Config::get('app.locale'),
+        //             'search' => [],
+        //         ]);
+        //     };
+        //     $searched = Size::where('iron_id', $category[0]->id)->paginate(5);
+        //     return view('admin.nowa.views.irons.index', [
+        //         "zoma" => Iron::with('translations')->get(),
+        //         "sizes" => Size::paginate(5),
+        //         "locale" => Config::get('app.locale'),
+        //         'search' => $searched,
+        //     ]);
+        // } else {
+        //     return view('admin.nowa.views.irons.index', [
+        //         "zoma" => Iron::with('translations')->get(),
+        //         "sizes" => Size::paginate(5),
+        //         "locale" => Config::get('app.locale'),
+        //         'search' => [],
+        //     ]);
+        // }
+
+        return view('admin.nowa.views.irons.index', [
+            "zoma" => Iron::with('translations')->get(),
+            "sizes" => Size::paginate(5),
+            "locale" => Config::get('app.locale'),
+            'search' => [],
+        ]);
     }
 }

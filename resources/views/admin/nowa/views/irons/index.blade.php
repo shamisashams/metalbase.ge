@@ -45,6 +45,8 @@
             <th>id</th>
             <th>name</th>
             <th>size</th>
+            <th></th>
+            <th></th>
             {{-- <th>delete</th> --}}
             {{-- <th>Salary</th> --}}
         </tr>
@@ -56,6 +58,12 @@
                 {{-- @csrf --}}
                 <td>
                     <input class="form-control" name='search' placeholder="search">
+                </td>
+            </form>
+            <form method='get' action={{route('admin.irons.search')}}>
+                {{-- @csrf --}}
+                <td>
+                    <input class="form-control" name='size' placeholder="search">
                 </td>
             </form>
               <td></td>
@@ -135,7 +143,6 @@
 </div>
 @endif
 {{-- <div class="contaner">
-
     {{ $sizes->appends(request()->input())->links('admin.vendor.pagination.material') }}
 </div> --}}
 
