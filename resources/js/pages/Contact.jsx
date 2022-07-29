@@ -77,17 +77,15 @@ const Contact = ({ seo, page, gphone, gemail, gaddress }) => {
                     </div>
                 </div>
                 <div className="md:absolute md:top-0 right-0 xl:w-2/3 md:w-1/2 w-full md:h-full h-60 overflow-hidden grayscale">
-                    {/* <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23818.085694040023!2d44.762141699999994!3d41.736469150000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sge!4v1658138557741!5m2!1sen!2sge"
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3546.9162470372135!2d41.62118743446107!3d41.62139510945156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40678f580aab37d9%3A0x5291eb151f0b59c0!2s25%20Leonidze%20St%2C%20Batumi!5e0!3m2!1sen!2sge!4v1659018751906!5m2!1sen!2sge"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe> */}
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2982.6011051912737!2d41.62207281573211!3d41.62113678943392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40678f580aab37d9%3A0x5291eb151f0b59c0!2s25%20Leonidze%20St%2C%20Batumi!5e0!3m2!1sen!2sge!4v1659017543242!5m2!1sen!2sge" width="100%" height="100%" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    ></iframe>{" "}
                 </div>
             </div>
         </Layout>
